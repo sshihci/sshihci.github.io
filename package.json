@@ -1,0 +1,19 @@
+{
+  "name": "sshihci.github.io",
+  "version": "0.0.1",
+  "description": "清水研究室のHP",
+  "author": "YutaUra <yuuta3594@outlook.jp>",
+  "keywords": [],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
