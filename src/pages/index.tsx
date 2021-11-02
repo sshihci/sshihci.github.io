@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import * as React from 'react'
 
 const docLink = {
   color: '#8954A8',
