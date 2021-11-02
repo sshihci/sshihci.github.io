@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "清水研究室のHP",
   "author": "YutaUra <yuuta3594@outlook.jp>",
+  "license": "MIT",
   "keywords": [],
   "scripts": {
     "develop": "gatsby develop",
