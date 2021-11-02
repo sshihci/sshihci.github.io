@@ -1,60 +1,5 @@
+import clsx from 'clsx'
 import * as React from 'react'
-
-// styles
-const pageStyles: React.CSSProperties = {
-  color: '#232129',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-  padding: 96,
-}
-const headingStyles: React.CSSProperties = {
-  marginBottom: 64,
-  marginTop: 0,
-  maxWidth: 320,
-}
-const headingAccentStyles: React.CSSProperties = {
-  color: '#663399',
-}
-const paragraphStyles: React.CSSProperties = {
-  marginBottom: 48,
-}
-const codeStyles: React.CSSProperties = {
-  backgroundColor: '#FFF4DB',
-  borderRadius: 4,
-  color: '#8A6534',
-  fontSize: '1.25rem',
-  padding: 4,
-}
-const listStyles: React.CSSProperties = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles: React.CSSProperties = {
-  fontSize: 24,
-  fontWeight: 300,
-  marginBottom: 30,
-  maxWidth: 560,
-}
-
-const linkStyle: React.CSSProperties = {
-  color: '#8954A8',
-  fontSize: 16,
-  fontWeight: 'bold',
-  verticalAlign: '5%',
-}
-
-const docLinkStyle: React.CSSProperties = {
-  ...linkStyle,
-  listStyleType: 'none',
-  marginBottom: 24,
-}
-
-const descriptionStyle: React.CSSProperties = {
-  color: '#232129',
-  fontSize: 14,
-  lineHeight: 1.25,
-  marginBottom: 0,
-  marginTop: 10,
-}
 
 const docLink = {
   color: '#8954A8',
@@ -62,54 +7,32 @@ const docLink = {
   url: 'https://www.gatsbyjs.com/docs/',
 }
 
-const badgeStyle: React.CSSProperties = {
-  backgroundColor: '#088413',
-  border: '1px solid #088413',
-  borderRadius: 4,
-  color: '#fff',
-  display: 'inline-block',
-  fontSize: 11,
-  fontWeight: 'bold',
-  letterSpacing: 1,
-  lineHeight: 1,
-  marginLeft: 10,
-  padding: '4px 6px',
-  position: 'relative',
-  top: -2,
-}
-
-// data
 const links = [
   {
-    color: '#E95800',
     description:
       "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
     text: 'Tutorial',
     url: 'https://www.gatsbyjs.com/docs/tutorial/',
   },
   {
-    color: '#1099A8',
     description:
       "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
     text: 'How to Guides',
     url: 'https://www.gatsbyjs.com/docs/how-to/',
   },
   {
-    color: '#BC027F',
     description:
       "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
     text: 'Reference Guides',
     url: 'https://www.gatsbyjs.com/docs/reference/',
   },
   {
-    color: '#0D96F2',
     description:
       'Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.',
     text: 'Conceptual Guides',
     url: 'https://www.gatsbyjs.com/docs/conceptual/',
   },
   {
-    color: '#8EB814',
     description:
       'Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.',
     text: 'Plugin Library',
@@ -117,7 +40,6 @@ const links = [
   },
   {
     badge: true,
-    color: '#663399',
     description:
       'Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!',
     text: 'Build and Host',
@@ -125,28 +47,29 @@ const links = [
   },
 ]
 
-// markup
 const IndexPage = (): JSX.Element => {
   return (
-    <main style={pageStyles}>
+    <main className="p-24 font-sans text-gray-800">
       <title>Home Page</title>
 
-      <h1 style={headingStyles}>
+      <h1 className="mb-16 max-w-xs">
         <span>Congratulations</span>
 
         <br />
 
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
+        <span className="text-purple-600">— you just made a Gatsby site! </span>
 
         <span aria-label="Party popper emojis" role="img">
           🎉🎉🎉
         </span>
       </h1>
 
-      <p style={paragraphStyles}>
+      <p className="mb-12">
         <span>Edit</span>
 
-        <code style={codeStyles}>src/pages/index.js</code>
+        <code className="p-1 text-xl text-yellow-600 bg-yellow-100 rounded-md">
+          src/pages/index.js
+        </code>
 
         <span>to see this page update in real-time.</span>
 
@@ -155,33 +78,41 @@ const IndexPage = (): JSX.Element => {
         </span>
       </p>
 
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
+      <ul className="mb-24">
+        <li className="mb-6 text-base font-bold align-top">
           <a
+            className="text-base font-bold text-purple-700 align-top"
             href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-            style={linkStyle}
           >
             {docLink.text}
           </a>
         </li>
 
         {links.map((link) => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+          <li
+            className={clsx('mb-8 max-w-xl text-2xl font-light')}
+            key={link.url}
+          >
             <span>
               <a
+                className="text-base font-bold text-purple-700 align-top"
                 href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-                style={linkStyle}
               >
                 {link.text}
               </a>
 
               {link.badge && (
-                <span aria-label="New Badge" style={badgeStyle}>
+                <span
+                  aria-label="New Badge"
+                  className="inline-block relative -top-0.5 py-0.5 px-1.5 ml-2.5 text-xs font-bold tracking-wider leading-none text-white bg-green-700 rounded-md border-green-700"
+                >
                   NEW!
                 </span>
               )}
 
-              <p style={descriptionStyle}>{link.description}</p>
+              <p className="mt-2.5 text-sm leading-tight text-gray-800">
+                {link.description}
+              </p>
             </span>
           </li>
         ))}

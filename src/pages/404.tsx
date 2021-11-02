@@ -1,38 +1,14 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 
-// styles
-const pageStyles: React.CSSProperties = {
-  color: '#232129',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-  padding: '96px',
-}
-const headingStyles: React.CSSProperties = {
-  marginBottom: 64,
-  marginTop: 0,
-  maxWidth: 320,
-}
-
-const paragraphStyles: React.CSSProperties = {
-  marginBottom: 48,
-}
-const codeStyles: React.CSSProperties = {
-  backgroundColor: '#FFF4DB',
-  borderRadius: 4,
-  color: '#8A6534',
-  fontSize: '1.25rem',
-  padding: 4,
-}
-
-// markup
 const NotFoundPage = (): JSX.Element => {
   return (
-    <main style={pageStyles}>
+    <main className="p-24 text-gray-800">
       <title>Not found</title>
 
-      <h1 style={headingStyles}>Page not found</h1>
+      <h1 className="mb-16 max-w-xs">Page not found</h1>
 
-      <p style={paragraphStyles}>
+      <p className="mb-12">
         <span>Sorry</span>
 
         <span aria-label="Pensive emoji" role="img">
@@ -49,7 +25,9 @@ const NotFoundPage = (): JSX.Element => {
 
             <span>Try creating a page in</span>
 
-            <code style={codeStyles}>src/pages/</code>
+            <code className="p-1 text-xl text-yellow-600 bg-yellow-100 rounded-md">
+              src/pages/
+            </code>
 
             <span>.</span>
 

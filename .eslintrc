@@ -2,6 +2,7 @@
   "extends": [
     "plugin:team-vals/recommended",
     "plugin:team-vals/react",
+    "plugin:team-vals/tailwindcss",
     "plugin:team-vals/prettier"
   ],
   "parserOptions": {
