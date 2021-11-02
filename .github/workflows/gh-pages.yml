@@ -6,8 +6,24 @@ on:
       - develop
 
 jobs:
+  check-type:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.4.0"
+          cache: yarn
+
+      - name: install
+        run: yarn
+      - name: check type
+        run: yarn check-type
+
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    needs:
+      - check-type
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2

@@ -1,7 +1,7 @@
-module.exports = {
-  siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "清水研究室のHP",
-  },
-  plugins: [],
-};
+const { register } = require("esbuild-register/dist/node");
+
+register({
+  target: "node16",
+});
+
+module.exports = require("./gatsby-config.ts");
