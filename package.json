@@ -11,7 +11,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "check-type": "tsc --noEmit"
+    "check-type": "tsc --noEmit",
+    "check-format": "prettier -c src \"gatsby-*\" \".github/**/*.yml\""
   },
   "dependencies": {
     "gatsby": "^4.0.2",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "esbuild": "^0.13.12",
     "esbuild-register": "^3.0.0",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.4"
   }
 }
