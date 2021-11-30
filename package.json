@@ -27,7 +27,7 @@
     "esbuild": "^0.14.1",
     "esbuild-register": "^3.2.0",
     "eslint": "^8.3.0",
-    "eslint-plugin-team-vals": "^1.0.42",
+    "eslint-plugin-team-vals": "^1.0.43",
     "gatsby-plugin-postcss": "^5.2.0",
     "postcss": "^8.4.4",
     "prettier": "^2.5.0",
