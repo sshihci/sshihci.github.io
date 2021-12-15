@@ -2,9 +2,17 @@
   "cSpell.words": [
     "bradlc",
     "clsx",
+    "Neue",
+    "noto",
     "peaceiris",
+    "Roboto",
     "Sayuri",
+    "Segoe",
     "sshihci",
     "typegen"
+  ],
+  "tailwindCSS.classAttributes": [
+    "className",
+    "activeClassName"
   ]
 }

@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-export const SectionBody = forwardRef<
+export const HeaderTitleWrapper = forwardRef<
   HTMLDivElement,
   JSX.IntrinsicElements['div']
 >(({ className, ...props }, ref) => {
   return (
     <div
-      className={clsx('px-4 sm:px-8 mx-auto max-w-5xl', className)}
+      className={clsx('flex flex-col-reverse gap-4', className)}
       ref={ref}
       {...props}
     />

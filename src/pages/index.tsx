@@ -1,51 +1,77 @@
+import { graphql as graphql, PageProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import Header from '~/components/Header'
 import Section from '~/components/Section'
 
-const IndexPage = (): JSX.Element => {
-  // const {} = useStaticQuery<GatsbyTypes.TopPageQuery>(gql`
-  //   query TopPage {
-  //     allFile(
-  //       filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
-  //       sort: {
-  //         fields: childrenMarkdownRemark___frontmatter___date
-  //         order: DESC
-  //       }
-  //       limit: 3
-  //     ) {
-  //       nodes {
-  //         id
-  //         childMarkdownRemark {
-  //           frontmatter {
-  //             date
-  //             title
-  //             description
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+export const query = graphql`
+  query IndexPage {
+    site {
+      siteMetadata {
+        title
+        subTitle
+      }
+    }
+    allFile(
+      limit: 3
+      filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
+      sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
+    ) {
+      nodes {
+        id
+        childMarkdownRemark {
+          frontmatter {
+            date
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({
+  data,
+}: PageProps<GatsbyTypes.IndexPageQuery>): JSX.Element => {
   return (
     <div>
-      <header>
-        <div>
-          <p>清水 沙友里 研究室</p>
-        </div>
-      </header>
+      <Header>
+        <Header.TitleWrapper>
+          <Header.Title>{data.site?.siteMetadata?.title}</Header.Title>
+
+          <Header.SubTitle>{data.site?.siteMetadata?.subTitle}</Header.SubTitle>
+        </Header.TitleWrapper>
+
+        <Header.Nav>
+          <Header.Nav.Item to="/#研究概要">研究概要</Header.Nav.Item>
+
+          <Header.Nav.Item to="/#研究者紹介">研究者紹介</Header.Nav.Item>
+
+          <Header.Nav.Item to="/#データについて">
+            データについて
+          </Header.Nav.Item>
+
+          <Header.Nav.Item to="/#お知らせ">お知らせ</Header.Nav.Item>
+
+          <Header.Nav.Item to="/#お問い合わせ">お問い合わせ</Header.Nav.Item>
+        </Header.Nav>
+      </Header>
 
       <main>
         <div className="sm:px-6 md:px-16">
           <StaticImage alt="" layout="fullWidth" src="../images/hero.png" />
         </div>
 
-        <Section>
-          <Section.Title>研究概要</Section.Title>
+        <Section id="研究概要">
+          <Section.Title>研究内容の紹介</Section.Title>
 
-          <p>研究の目的は〜〜〜</p>
+          <Section.Body>
+            <p>研究の目的は〜〜〜</p>
+          </Section.Body>
         </Section>
 
         <Section>
-          <Section.Title className="sr-only">自己紹介</Section.Title>
+          <Section.Title>研究者案内</Section.Title>
 
           <Section.Body>
             <div className="flex flex-col sm:flex-row">
@@ -103,13 +129,15 @@ const IndexPage = (): JSX.Element => {
 
           <Section.Body>
             <ol>
-              <li>
-                <div>
-                  <p>2020/01/01</p>
+              {data.allFile.nodes.map(({ id, childMarkdownRemark }) => (
+                <li key={id}>
+                  <div>
+                    <p>{childMarkdownRemark?.frontmatter?.date}</p>
 
-                  <p>データの更新</p>
-                </div>
-              </li>
+                    <p>{childMarkdownRemark?.frontmatter?.title}</p>
+                  </div>
+                </li>
+              ))}
             </ol>
           </Section.Body>
         </Section>

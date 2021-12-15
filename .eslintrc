@@ -9,5 +9,10 @@
     "project": "tsconfig.json",
     "tsconfigRootDir": "./"
   },
-  "ignorePatterns": ["gatsby-config.js"]
+  "rules": {
+    "tailwindcss/no-custom-classname": "off"
+  },
+  "ignorePatterns": [
+    "gatsby-config.js"
+  ]
 }

@@ -17,6 +17,8 @@ jobs:
 
       - name: install
         run: yarn
+      - name: build
+        run: yarn build
       - name: check type
         run: yarn check-type
 
@@ -45,6 +47,8 @@ jobs:
 
       - name: install
         run: yarn
+      - name: build
+        run: yarn build
       - name: check lint
         run: yarn check-lint
 
@@ -60,13 +64,6 @@ jobs:
         with:
           node-version: '16.4.0'
           cache: yarn
-      - uses: actions/cache@v2
-        with:
-          path: |
-            public
-            .cache
-          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-gatsby-build-
 
       - name: install
         run: yarn
