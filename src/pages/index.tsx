@@ -1,5 +1,6 @@
 import { graphql as graphql, PageProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import Footer from '~/components/Footer'
 import Header from '~/components/Header'
 import NewsList from '~/components/NewsList'
 import Section from '~/components/Section'
@@ -182,9 +183,19 @@ const IndexPage = ({
         </Section>
       </main>
 
-      <footer className="h-40 bg-gray-300">
-        <p>フッター</p>
-      </footer>
+      <Footer>
+        <Footer.TitleWrapper>
+          <Footer.Title>{data.site?.siteMetadata?.title}</Footer.Title>
+
+          <Footer.SubTitle>{data.site?.siteMetadata?.subTitle}</Footer.SubTitle>
+        </Footer.TitleWrapper>
+
+        <Footer.AddressWrapper>
+          <Footer.AddressName>金沢八景キャンパス</Footer.AddressName>
+
+          <Footer.Address>〒236-0027 横浜市金沢区瀬戸22-2</Footer.Address>
+        </Footer.AddressWrapper>
+      </Footer>
     </div>
   )
 }
