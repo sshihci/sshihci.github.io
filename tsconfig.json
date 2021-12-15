@@ -6,7 +6,11 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "baseUrl": "./",
-    "paths": {},
+    "paths": {
+      "~/*": [
+        "src/*"
+      ]
+    },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -21,6 +25,6 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   }
 }

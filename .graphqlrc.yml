@@ -1,0 +1,5 @@
+schema:
+  - ./src/__generated__/gatsby-introspection.json
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./src/__generated__/gatsby-plugin-documents.graphql
