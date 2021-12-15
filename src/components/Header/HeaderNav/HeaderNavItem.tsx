@@ -5,13 +5,15 @@ import { useMemo } from 'react'
 
 export const HeaderNavItem = ({
   className,
-  ref,
   ...props
-}: GatsbyLinkProps<Record<string, unknown>>): JSX.Element => {
+}: Omit<GatsbyLinkProps<Record<string, unknown>>, 'ref'>): JSX.Element => {
   const location = useLocation()
 
   const isActive = useMemo(
-    () => decodeURI(location.href.replace(location.origin, '')) === props.to,
+    () =>
+      location.href &&
+      location.origin &&
+      decodeURI(location.href.replace(location.origin, '')) === props.to,
     [props.to, location.href, location.origin],
   )
 
