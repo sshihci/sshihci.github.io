@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"pageContext":{}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"清水沙友里 研究室","subTitle":"横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻"}},"allFile":{"nodes":[{"id":"f9f55faa-daf6-5512-b7d5-9a1c0aa8a718","childMarkdownRemark":{"frontmatter":{"date":"2021年12月2日","title":"お知らせ","description":"初めてのお知らせです\n"}}},{"id":"f5e3af03-76be-5083-b2a5-4bff8dd22e39","childMarkdownRemark":{"frontmatter":{"date":"2021年12月1日","title":"お知らせ","description":"初めてのお知らせです\n"}}},{"id":"5121a056-070c-524a-aae4-7dcd9cb78697","childMarkdownRemark":{"frontmatter":{"date":"2021年11月30日","title":"お知らせ","description":"初めてのお知らせです\n"}}}]}},"pageContext":{}},
     "staticQueryHashes": []}
