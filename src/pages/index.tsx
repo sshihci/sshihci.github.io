@@ -1,6 +1,7 @@
 import { graphql as graphql, PageProps } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import Header from '~/components/Header'
+import NewsList from '~/components/NewsList'
 import Section from '~/components/Section'
 
 export const query = graphql`
@@ -43,9 +44,9 @@ const IndexPage = ({
         </Header.TitleWrapper>
 
         <Header.Nav>
-          <Header.Nav.Item to="/#研究概要">研究概要</Header.Nav.Item>
+          <Header.Nav.Item to="/#研究内容の紹介">研究概要</Header.Nav.Item>
 
-          <Header.Nav.Item to="/#研究者紹介">研究者紹介</Header.Nav.Item>
+          <Header.Nav.Item to="/#研究者案内">研究者紹介</Header.Nav.Item>
 
           <Header.Nav.Item to="/#データについて">
             データについて
@@ -62,7 +63,7 @@ const IndexPage = ({
           <StaticImage alt="" layout="fullWidth" src="../images/hero.png" />
         </div>
 
-        <Section id="研究概要">
+        <Section id="研究内容の紹介">
           <Section.Title>研究内容の紹介</Section.Title>
 
           <Section.Body>
@@ -70,7 +71,7 @@ const IndexPage = ({
           </Section.Body>
         </Section>
 
-        <Section>
+        <Section id="研究者案内">
           <Section.Title>研究者案内</Section.Title>
 
           <Section.Body>
@@ -124,25 +125,27 @@ const IndexPage = ({
           </Section.Body>
         </Section>
 
-        <Section>
+        <Section id="お知らせ">
           <Section.Title>お知らせ</Section.Title>
 
           <Section.Body>
-            <ol>
+            <NewsList>
               {data.allFile.nodes.map(({ id, childMarkdownRemark }) => (
-                <li key={id}>
-                  <div>
-                    <p>{childMarkdownRemark?.frontmatter?.date}</p>
+                <NewsList.Item key={id}>
+                  <NewsList.Item.Title>
+                    {childMarkdownRemark?.frontmatter?.title}
+                  </NewsList.Item.Title>
 
-                    <p>{childMarkdownRemark?.frontmatter?.title}</p>
-                  </div>
-                </li>
+                  <NewsList.Item.Date>
+                    {childMarkdownRemark?.frontmatter?.date}
+                  </NewsList.Item.Date>
+                </NewsList.Item>
               ))}
-            </ol>
+            </NewsList>
           </Section.Body>
         </Section>
 
-        <Section>
+        <Section id="お問い合わせ">
           <Section.Title>お問い合わせ</Section.Title>
 
           <Section.Body />
