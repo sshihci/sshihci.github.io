@@ -1,9 +1,12 @@
 module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
   plugins: [],
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      dropShadow: {
+        hexagon: '2px 5px 4px rgba(0, 0, 0, 0.2)',
+      },
       fontFamily: {
         noto: [
           '"Noto Sans JP"',

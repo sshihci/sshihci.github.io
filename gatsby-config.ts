@@ -15,11 +15,20 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
     {
       options: {
         ignore: [`${__dirname}/src/__generated__/*.ts`],
         name: `news`,
         path: `${__dirname}/src/contents/news/`,
+      },
+      resolve: `gatsby-source-filesystem`,
+    },
+    {
+      options: {
+        ignore: [`${__dirname}/src/__generated__/*.ts`],
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
       resolve: `gatsby-source-filesystem`,
     },

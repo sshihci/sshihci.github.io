@@ -1,7 +1,9 @@
 import { graphql as graphql, PageProps } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+import { getImage, StaticImage } from 'gatsby-plugin-image'
+import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
 import Footer from '~/components/Footer'
 import Header from '~/components/Header'
+import Hero from '~/components/Hero'
 import NewsList from '~/components/NewsList'
 import Section from '~/components/Section'
 
@@ -29,14 +31,20 @@ export const query = graphql`
         }
       }
     }
+    hero: file(sourceInstanceName: { eq: "images" }, name: { eq: "hero" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
   }
 `
 
 const IndexPage = ({
   data,
 }: PageProps<GatsbyTypes.IndexPageQuery>): JSX.Element => {
+  console.log(data.hero?.childImageSharp?.gatsbyImageData)
   return (
-    <div>
+    <div className="bg-gray-50">
       <Header>
         <Header.TitleWrapper>
           <Header.Title>{data.site?.siteMetadata?.title}</Header.Title>
@@ -60,9 +68,23 @@ const IndexPage = ({
       </Header>
 
       <main>
-        <div className="sm:px-6 md:px-16">
-          <StaticImage alt="" layout="fullWidth" src="../images/hero.png" />
-        </div>
+        <Hero className="mb-8">
+          <Hero.Image
+            alt=""
+            image={getImage(data.hero?.childImageSharp?.gatsbyImageData!)!}
+          />
+
+          <Hero.Text>
+            Health Data Science Frontier. <br />
+            データで医療を変えていく
+          </Hero.Text>
+
+          <Hero.Badge>
+            <Hero.Badge.Text>Big Data Analysis</Hero.Badge.Text>
+          </Hero.Badge>
+
+          <HexagonMap className="absolute left-8 -bottom-8" />
+        </Hero>
 
         <Section id="研究内容の紹介">
           <Section.Title>研究内容の紹介</Section.Title>
