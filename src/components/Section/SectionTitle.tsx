@@ -7,7 +7,9 @@ export const SectionTitle = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <div className="flex flex-row gap-5 items-center">
-      <div className="w-36 border-0 h-[1.125px] bg-cyan-600" />
+      <div
+        className={clsx('w-12 border-0 h-[1.125px] bg-cyan-600', 'sm:w-28')}
+      />
 
       <h2
         className={clsx(

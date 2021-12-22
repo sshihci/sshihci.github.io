@@ -8,7 +8,9 @@ export const Header = forwardRef<
   return (
     <header
       className={clsx(
-        'flex flex-row justify-between items-center px-20 h-40',
+        'flex flex-row justify-between items-center px-8 h-32',
+        'lg:px-12 lg:h-40',
+        'xl:px-20',
         className,
       )}
       ref={ref}

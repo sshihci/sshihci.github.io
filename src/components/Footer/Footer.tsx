@@ -8,7 +8,9 @@ export const Footer = forwardRef<
   return (
     <footer
       className={clsx(
-        'flex flex-row justify-between items-center px-24 h-52 bg-gray-200',
+        'flex flex-col justify-around px-8 h-52 bg-gray-200',
+        'sm:flex-row sm:justify-between sm:items-center',
+        'md:px-24',
         className,
       )}
       ref={ref}

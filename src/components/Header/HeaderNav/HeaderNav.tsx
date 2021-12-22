@@ -7,7 +7,12 @@ export const HeaderNav = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <nav
-      className={clsx('flex flex-row gap-9', className)}
+      className={clsx(
+        'hidden',
+        'lg:flex lg:flex-row lg:gap-2',
+        'xl:gap-9',
+        className,
+      )}
       ref={ref}
       {...props}
     />

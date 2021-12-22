@@ -40,6 +40,28 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
 
           <Header.Nav.Item to="/#お問い合わせ">お問い合わせ</Header.Nav.Item>
         </Header.Nav>
+
+        <Header.NavMobile>
+          <Header.NavMobile.Item to="/#研究内容の紹介">
+            研究概要
+          </Header.NavMobile.Item>
+
+          <Header.NavMobile.Item to="/#研究者案内">
+            研究者紹介
+          </Header.NavMobile.Item>
+
+          <Header.NavMobile.Item to="/#データについて">
+            データについて
+          </Header.NavMobile.Item>
+
+          <Header.NavMobile.Item to="/#お知らせ">
+            お知らせ
+          </Header.NavMobile.Item>
+
+          <Header.NavMobile.Item to="/#お問い合わせ">
+            お問い合わせ
+          </Header.NavMobile.Item>
+        </Header.NavMobile>
       </Header>
 
       <main className="flex flex-col flex-1 gap-5">{children}</main>

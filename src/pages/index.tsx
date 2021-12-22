@@ -100,8 +100,8 @@ const IndexPage = ({
         </Section.Body>
       </Section>
 
-      <Section id="研究者案内">
-        <HexagonMap className="absolute top-24 right-12" />
+      <Section className="z-0" id="研究者案内">
+        <HexagonMap className="absolute top-24 right-12 -z-10" />
 
         <Section.Title>研究者案内</Section.Title>
 
@@ -147,8 +147,8 @@ const IndexPage = ({
         </Section.Body>
       </Section>
 
-      <Section id="お知らせ">
-        <HexagonMap className="absolute bottom-0 left-4" />
+      <Section className="z-0" id="お知らせ">
+        <HexagonMap className="absolute bottom-0 left-4 -z-10" />
 
         <Section.Title>お知らせ</Section.Title>
 
@@ -224,7 +224,7 @@ const IndexPage = ({
               </div>
 
               <div className="flex-1">
-                <ContactForm.Field className="h-full min-h-">
+                <ContactForm.Field className="h-full">
                   <ContactForm.Field.Label className="lg:sr-only">
                     お問い合わせ内容
                   </ContactForm.Field.Label>
@@ -233,6 +233,7 @@ const IndexPage = ({
                     name={data.site?.siteMetadata?.contact?.fields?.body}
                     placeholder="詳しい内容をお書きください"
                     required
+                    rows={4}
                   />
                 </ContactForm.Field>
               </div>
@@ -248,7 +249,7 @@ const IndexPage = ({
       <Section>
         <Section.Title>関連リンク</Section.Title>
 
-        <Section.Body>
+        <Section.Body className="py-12">
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
             <a className="block flex-1 md:h-full" href="#">
               <span className="sr-only">

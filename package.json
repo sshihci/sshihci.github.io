@@ -26,6 +26,7 @@
     "gatsby-transformer-sharp": "^4.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.3.1",
     "react-toast-notifications": "^2.5.1",
     "react-use": "^17.3.1"
   },
