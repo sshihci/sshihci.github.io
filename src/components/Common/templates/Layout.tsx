@@ -42,7 +42,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         </Header.Nav>
       </Header>
 
-      <main className="flex-1">{children}</main>
+      <main className="flex flex-col flex-1 gap-5">{children}</main>
 
       <Footer className="flex-shrink-0">
         <Footer.TitleWrapper>

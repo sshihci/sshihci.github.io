@@ -1,9 +1,11 @@
 import { graphql as graphql, PageProps } from 'gatsby'
 import { getImage, StaticImage } from 'gatsby-plugin-image'
 import { useMemo } from 'react'
+import { Link } from '~/components/Common/atoms/Link'
 import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
 import { Layout } from '~/components/Common/templates/Layout'
 import Hero from '~/components/Hero'
+import Introduction from '~/components/Introduction'
 import NewsList from '~/components/NewsList'
 import Section from '~/components/Section'
 
@@ -30,6 +32,14 @@ export const query = graphql`
         gatsbyImageData
       }
     }
+    topImage: file(
+      sourceInstanceName: { eq: "images" }
+      name: { eq: "top_image" }
+    ) {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
   }
 `
 
@@ -41,6 +51,13 @@ const IndexPage = ({
       data.hero?.childImageSharp?.gatsbyImageData &&
       getImage(data.hero.childImageSharp.gatsbyImageData),
     [data.hero?.childImageSharp?.gatsbyImageData],
+  )
+
+  const topImage = useMemo(
+    () =>
+      data.topImage?.childImageSharp?.gatsbyImageData &&
+      getImage(data.topImage.childImageSharp.gatsbyImageData),
+    [data.topImage?.childImageSharp?.gatsbyImageData],
   )
 
   return (
@@ -69,60 +86,55 @@ const IndexPage = ({
       </Section>
 
       <Section id="研究者案内">
+        <HexagonMap className="absolute top-24 right-12" />
+
         <Section.Title>研究者案内</Section.Title>
 
         <Section.Body>
-          <div className="flex flex-col sm:flex-row">
-            <div className="flex-1">
-              <StaticImage
-                alt=""
-                className="mx-auto w-48 rounded-full"
-                layout="fullWidth"
-                src="../images/top_image.png"
-              />
-            </div>
+          <Introduction>
+            <Introduction.Description>
+              <Introduction.Name>
+                <Introduction.Name.Japanese>
+                  清水 沙友里
+                </Introduction.Name.Japanese>
 
-            <div className="flex-[2]">
-              <div>
-                <p className="sr-only">氏名: </p>
+                <Introduction.Name.English>
+                  Shimizu Sayuri
+                </Introduction.Name.English>
+              </Introduction.Name>
 
-                <p>清水 沙友里</p>
-              </div>
+              <Introduction.MainSubject>
+                <Introduction.MainSubject.Label>
+                  主要担当科目
+                </Introduction.MainSubject.Label>
 
-              <div>
-                <p className="sr-only">Name: </p>
+                <Introduction.MainSubject.Name>
+                  ビッグデータ解析
+                </Introduction.MainSubject.Name>
+              </Introduction.MainSubject>
 
-                <p>Shimizu Sayuri</p>
-              </div>
+              <Introduction.Profile>
+                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
+                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
+                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
+                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
+              </Introduction.Profile>
 
-              <div>
-                <p className="sr-only">所属:</p>
+              <Link className="ml-auto" to="https://researchmap.jp/ssyr">
+                リサーチマップはこちら
+              </Link>
+            </Introduction.Description>
 
-                <p>データサイエンス研究科 ヘルスデータサイエンス専攻</p>
-              </div>
-
-              <div>
-                <p className="sr-only">自己紹介:</p>
-
-                <p>簡単な自己紹介を書く</p>
-              </div>
-
-              <div>
-                <a
-                  className="block py-1 px-3 ml-auto w-max text-blue-600 hover:text-blue-800 hover:bg-blue-100 rounded-md border border-blue-600 hover:border-blue-800 transition-all duration-300"
-                  href="https://researchmap.jp/ssyr"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  リサーチマップ
-                </a>
-              </div>
-            </div>
-          </div>
+            {topImage && (
+              <Introduction.Image alt="清水 沙友里" image={topImage} />
+            )}
+          </Introduction>
         </Section.Body>
       </Section>
 
       <Section id="お知らせ">
+        <HexagonMap className="absolute bottom-0 left-4" />
+
         <Section.Title>お知らせ</Section.Title>
 
         <Section.Body>
@@ -139,7 +151,19 @@ const IndexPage = ({
               </NewsList.Item>
             ))}
           </NewsList>
+
+          <div className="mx-auto max-w-4xl">
+            <Link className="block ml-auto max-w-max" to="/news">
+              お知らせ一覧
+            </Link>
+          </div>
         </Section.Body>
+      </Section>
+
+      <Section id="データの更新">
+        <Section.Title>データの更新</Section.Title>
+
+        <Section.Body />
       </Section>
 
       <Section id="お問い合わせ">

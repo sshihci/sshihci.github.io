@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-export const Section = forwardRef<
+export const IntroductionDescription = forwardRef<
   HTMLDivElement,
-  JSX.IntrinsicElements['section']
+  JSX.IntrinsicElements['div']
 >(({ className, ...props }, ref) => {
   return (
-    <section
-      className={clsx('relative py-5', className)}
+    <div
+      className={clsx('flex flex-col flex-1 gap-5', className)}
       ref={ref}
       {...props}
     />

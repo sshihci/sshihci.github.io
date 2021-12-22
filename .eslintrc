@@ -10,7 +10,13 @@
     "tsconfigRootDir": "./"
   },
   "rules": {
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "react/jsx-max-depth": [
+      2,
+      {
+        "max": 10
+      }
+    ]
   },
   "ignorePatterns": [
     "gatsby-config.js"
