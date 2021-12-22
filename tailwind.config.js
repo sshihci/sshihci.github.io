@@ -1,7 +1,7 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'class',
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {
       dropShadow: {

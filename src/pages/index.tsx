@@ -4,6 +4,8 @@ import { useMemo } from 'react'
 import { Link } from '~/components/Common/atoms/Link'
 import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
 import { Layout } from '~/components/Common/templates/Layout'
+import ContactForm from '~/components/ContactForm'
+import { ContactFormButton } from '~/components/ContactForm/ContactFormButton'
 import Hero from '~/components/Hero'
 import Introduction from '~/components/Introduction'
 import NewsList from '~/components/NewsList'
@@ -38,6 +40,19 @@ export const query = graphql`
     ) {
       childImageSharp {
         gatsbyImageData
+      }
+    }
+    site {
+      siteMetadata {
+        contact {
+          googleFormId
+          fields {
+            name
+            belongs
+            contactAddress
+            body
+          }
+        }
       }
     }
   }
@@ -166,10 +181,68 @@ const IndexPage = ({
         <Section.Body />
       </Section>
 
-      <Section id="お問い合わせ">
+      <Section className="z-0" id="お問い合わせ">
+        <HexagonMap className="absolute right-7 bottom-24 -z-10" />
+
         <Section.Title>お問い合わせ</Section.Title>
 
-        <Section.Body />
+        <Section.Body>
+          <ContactForm
+            action={`https://docs.google.com/forms/u/0/d/e/${data.site?.siteMetadata?.contact?.googleFormId}/formResponse`}
+          >
+            <div className="flex flex-col lg:flex-row gap-3 lg:gap-8 mb-8">
+              <div className="flex flex-col flex-1 gap-3">
+                <ContactForm.Field>
+                  <ContactForm.Field.Label>名前</ContactForm.Field.Label>
+
+                  <ContactForm.Field.Input
+                    name={data.site?.siteMetadata?.contact?.fields?.name}
+                    placeholder="山田 太郎"
+                    required
+                  />
+                </ContactForm.Field>
+
+                <ContactForm.Field>
+                  <ContactForm.Field.Label>所属</ContactForm.Field.Label>
+
+                  <ContactForm.Field.Input
+                    name={data.site?.siteMetadata?.contact?.fields?.belongs}
+                    placeholder="横浜市立大学 ヘルスデータサイエンス学科"
+                  />
+                </ContactForm.Field>
+
+                <ContactForm.Field>
+                  <ContactForm.Field.Label>連絡先</ContactForm.Field.Label>
+
+                  <ContactForm.Field.Input
+                    name={
+                      data.site?.siteMetadata?.contact?.fields?.contactAddress
+                    }
+                    placeholder="email@example.com 又は 090-1234-5678"
+                  />
+                </ContactForm.Field>
+              </div>
+
+              <div className="flex-1">
+                <ContactForm.Field className="h-full min-h-">
+                  <ContactForm.Field.Label className="lg:sr-only">
+                    お問い合わせ内容
+                  </ContactForm.Field.Label>
+
+                  <ContactForm.Field.Textarea
+                    name={data.site?.siteMetadata?.contact?.fields?.body}
+                    placeholder="詳しい内容をお書きください"
+                    required
+                  />
+                </ContactForm.Field>
+              </div>
+            </div>
+
+            <ContactFormButton className="block mx-auto">
+              送信する
+            </ContactFormButton>
+          </ContactForm>
+        </Section.Body>
       </Section>
 
       <Section>

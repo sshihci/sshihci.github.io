@@ -18,12 +18,15 @@
   },
   "dependencies": {
     "@fontsource/noto-sans-jp": "^4.5.2",
+    "@tailwindcss/forms": "^0.4.0",
     "clsx": "^1.1.1",
     "framer-motion": "^5.5.3",
     "gatsby": "^4.4.0",
+    "gatsby-plugin-manifest": "^4.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-toast-notifications": "^2.5.1",
     "react-use": "^17.3.1"
   },
   "devDependencies": {

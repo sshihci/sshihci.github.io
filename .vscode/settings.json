@@ -9,7 +9,8 @@
     "Sayuri",
     "Segoe",
     "sshihci",
-    "typegen"
+    "typegen",
+    "viewform"
   ],
   "tailwindCSS.classAttributes": [
     "className",
