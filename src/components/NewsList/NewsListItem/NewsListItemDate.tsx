@@ -7,7 +7,7 @@ export const NewsListItemDate = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <p
-      className={clsx('font-noto font-light text-cyan-600', className)}
+      className={clsx(' font-light text-cyan-600', className)}
       ref={ref}
       {...props}
     />

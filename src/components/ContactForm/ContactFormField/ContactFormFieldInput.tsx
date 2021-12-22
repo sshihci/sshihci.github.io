@@ -8,7 +8,7 @@ export const ContactFormFieldInput = forwardRef<
   return (
     <input
       className={clsx(
-        'block flex-1 font-noto text-lg text-gray-600 placeholder:text-gray-400 bg-gray-200 rounded-t-xl border-0',
+        'block flex-1 text-lg placeholder:text-gray-400 bg-gray-200 rounded-t-xl border-0',
         'focus:border-b-2 focus:ring-0 focus:outline-none focus:border-cyan-500',
         className,
       )}

@@ -8,7 +8,7 @@ export const Introduction = forwardRef<
   return (
     <article
       className={clsx(
-        'flex flex-col md:flex-row gap-16 items-center py-16',
+        'flex flex-col md:flex-row gap-16 items-center',
         className,
       )}
       ref={ref}

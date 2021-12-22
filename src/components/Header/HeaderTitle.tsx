@@ -7,7 +7,7 @@ export const HeaderTitle = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <h1
-      className={clsx('px-1 font-noto text-4xl font-light', className)}
+      className={clsx('px-1 text-4xl font-light', className)}
       ref={ref}
       {...props}
     />

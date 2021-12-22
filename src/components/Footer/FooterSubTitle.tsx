@@ -7,7 +7,7 @@ export const FooterSubTitle = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <p
-      className={clsx('font-noto text-sm font-light text-cyan-600', className)}
+      className={clsx('text-sm font-light text-cyan-600', className)}
       ref={ref}
       {...props}
     />

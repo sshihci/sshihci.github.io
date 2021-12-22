@@ -19,7 +19,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
     }
   `)
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen font-noto text-gray-600 bg-gray-50">
       <Header className="flex-shrink-0">
         <Header.TitleWrapper>
           <Header.Title>{site?.siteMetadata?.title}</Header.Title>

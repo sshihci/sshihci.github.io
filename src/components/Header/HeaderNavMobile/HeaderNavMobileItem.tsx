@@ -20,7 +20,7 @@ export const HeaderNavMobileItem = ({
   return (
     <Link
       className={clsx(
-        'inline-block py-3 px-8 max-w-max font-noto text-3xl text-gray-600 hover:underline decoration-cyan-400 underline-offset-4',
+        'inline-block py-3 px-8 max-w-max text-3xl hover:underline decoration-cyan-400 underline-offset-4',
         isActive && 'underline',
         className,
       )}

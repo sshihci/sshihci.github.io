@@ -5,11 +5,5 @@ export const IntroductionProfile = forwardRef<
   HTMLParagraphElement,
   JSX.IntrinsicElements['p']
 >(({ className, ...props }, ref) => {
-  return (
-    <p
-      className={clsx('font-noto text-lg text-gray-600', className)}
-      ref={ref}
-      {...props}
-    />
-  )
+  return <p className={clsx(' text-lg ', className)} ref={ref} {...props} />
 })

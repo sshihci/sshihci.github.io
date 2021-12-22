@@ -8,7 +8,7 @@ export const HeroBadgeText = forwardRef<
   return (
     <p
       className={clsx(
-        'w-56 font-noto text-5xl leading-normal text-gray-100 break-all',
+        'w-56 text-5xl leading-normal text-gray-100 break-all',
         className,
       )}
       ref={ref}

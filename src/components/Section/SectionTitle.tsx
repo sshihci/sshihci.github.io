@@ -12,10 +12,7 @@ export const SectionTitle = forwardRef<
       />
 
       <h2
-        className={clsx(
-          'flex-1 font-noto text-4xl font-light text-gray-600',
-          className,
-        )}
+        className={clsx('flex-1 text-4xl font-light', className)}
         ref={ref}
         {...props}
       />

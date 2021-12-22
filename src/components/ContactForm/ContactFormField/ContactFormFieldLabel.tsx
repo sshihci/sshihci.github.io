@@ -8,7 +8,7 @@ export const ContactFormFieldLabel = forwardRef<
   return (
     <p
       className={clsx(
-        'flex flex-row justify-start items-center font-noto text-lg text-right text-gray-600 min-w-[8rem]',
+        'flex flex-row justify-start items-center text-lg text-right min-w-[8rem]',
         'sm:justify-end sm:text-base',
         className,
       )}

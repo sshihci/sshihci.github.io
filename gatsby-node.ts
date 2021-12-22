@@ -1,4 +1,5 @@
 import { GatsbyNode } from 'gatsby'
+import { resolve } from 'path'
 
 export const onCreateBabelConfig: GatsbyNode['onCreateBabelConfig'] = ({
   actions,
@@ -22,6 +23,7 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
 
 export const createResolvers: GatsbyNode['createResolvers'] = ({
   createResolvers: createResolversFn,
+  reporter,
 }) => {
   createResolversFn({
     SiteSiteMetadataContact: {
@@ -37,15 +39,56 @@ export const createResolvers: GatsbyNode['createResolvers'] = ({
               googleFormUrl,
             )
           if (!match) {
-            throw new Error(
+            reporter.panicOnBuild(
               `Invalid googleFormUrl: ${googleFormUrl}.\n` +
                 `"https://docs.google.com/forms/d/e/XXXXXXX/viewform" という形式で入力してください`,
             )
+            return null
           }
           return match.groups?.['id'] ?? ''
         },
         type: 'String',
       },
     },
+  })
+}
+
+export const createPages: GatsbyNode['createPages'] = async ({
+  graphql,
+  actions,
+  reporter,
+}) => {
+  const result = await graphql<{
+    allNews: { nodes: { id: string }[] }
+  }>(/* GraphQL */ `
+    query CreatePages {
+      allNews: allFile(
+        filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
+        sort: {
+          fields: childrenMarkdownRemark___frontmatter___date
+          order: DESC
+        }
+      ) {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  result.data?.allNews.nodes.forEach(({ id }) => {
+    actions.createPage({
+      component: resolve('./src/templates/NewsDetail.tsx'),
+      context: {
+        id,
+      },
+      path: `/news/${id}`,
+    })
   })
 }

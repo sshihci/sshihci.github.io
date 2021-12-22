@@ -22,7 +22,7 @@ export const ContactForm = forwardRef<
 
   return (
     <form
-      className={clsx('py-16', className)}
+      className={clsx('', className)}
       method="POST"
       onSubmit={onSubmit}
       ref={ref}

@@ -153,9 +153,9 @@ const IndexPage = ({
         <Section.Title>お知らせ</Section.Title>
 
         <Section.Body>
-          <NewsList>
+          <NewsList className="mb-8">
             {data.allFile.nodes.map(({ id, childMarkdownRemark }) => (
-              <NewsList.Item key={id}>
+              <NewsList.Item key={id} newsId={id}>
                 <NewsList.Item.Title>
                   {childMarkdownRemark?.frontmatter?.title}
                 </NewsList.Item.Title>
@@ -249,7 +249,7 @@ const IndexPage = ({
       <Section>
         <Section.Title>関連リンク</Section.Title>
 
-        <Section.Body className="py-12">
+        <Section.Body>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
             <a className="block flex-1 md:h-full" href="#">
               <span className="sr-only">

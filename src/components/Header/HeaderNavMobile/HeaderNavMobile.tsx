@@ -25,9 +25,9 @@ export const HeaderNavMobile = forwardRef<
           onClick={setTrue}
           type="button"
         >
-          <AiOutlineMenu className="text-gray-600" size={36} />
+          <AiOutlineMenu size={36} />
 
-          <span className="text-xs text-gray-600">メニュー</span>
+          <span className="text-xs">メニュー</span>
         </button>
       </div>
 
@@ -45,7 +45,7 @@ export const HeaderNavMobile = forwardRef<
             onClick={setFalse}
             type="button"
           >
-            <AiOutlineClose className="text-gray-600" size={36} />
+            <AiOutlineClose size={36} />
           </button>
         </div>
 

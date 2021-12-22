@@ -7,7 +7,7 @@ export const NewsList = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <ol
-      className={clsx('flex flex-col gap-4 py-12', className)}
+      className={clsx('flex flex-col gap-4', className)}
       ref={ref}
       {...props}
     />

@@ -20,7 +20,7 @@ export const HeaderNavItem = ({
   return (
     <Link
       className={clsx(
-        'font-noto text-lg text-gray-600 hover:underline transition-all duration-500 decoration-cyan-400 underline-offset-4',
+        'text-lg hover:underline transition-all duration-500 decoration-cyan-400 underline-offset-4',
         isActive && 'underline',
         className,
       )}

@@ -7,10 +7,7 @@ export const FooterAddressName = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <p
-      className={clsx(
-        'px-1 font-noto text-lg font-light text-cyan-600',
-        className,
-      )}
+      className={clsx('px-1 text-lg font-light text-cyan-600', className)}
       ref={ref}
       {...props}
     />

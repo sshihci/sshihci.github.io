@@ -6,10 +6,6 @@ export const HeaderSubTitle = forwardRef<
   JSX.IntrinsicElements['p']
 >(({ className, ...props }, ref) => {
   return (
-    <p
-      className={clsx('font-noto text-sm font-light text-gray-600', className)}
-      ref={ref}
-      {...props}
-    />
+    <p className={clsx('text-sm font-light', className)} ref={ref} {...props} />
   )
 })
