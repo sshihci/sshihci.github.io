@@ -13,6 +13,9 @@ const siteMetadata = {
       'https://docs.google.com/forms/d/e/1FAIpQLSdIlc0UtgbxsrB7KaGIP21jTFWAjPPpPsxL1tT-e_AAg7e6Mw/viewform',
   },
   description: `横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻 の 清水沙友里です。`,
+  facebook: {
+    accountId: '2320530151368497',
+  },
   newsPerPage: 5, // お知らせ一覧で１ページで表示されるお知らせの数
   siteUrl: 'https://sshihci.github.io/',
   subTitle: '横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻',

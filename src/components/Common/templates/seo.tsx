@@ -6,6 +6,7 @@ type SEOProps = {
   description?: string | undefined
   twitterTitle?: string | undefined
   twitterDescription?: string | undefined
+  type?: 'website' | 'article'
 }
 
 export const Seo = ({
@@ -13,6 +14,7 @@ export const Seo = ({
   description,
   twitterTitle,
   twitterDescription,
+  type = 'website',
 }: SEOProps): JSX.Element => {
   const { site } = useStaticQuery<GatsbyTypes.SeoQuery>(graphql`
     query Seo {
@@ -24,6 +26,9 @@ export const Seo = ({
           twitter {
             account
             creator
+          }
+          facebook {
+            accountId
           }
         }
       }
@@ -43,12 +48,14 @@ export const Seo = ({
 
       <meta content={title} property="og:title" />
 
+      <meta content={site?.siteMetadata?.title} property="og:site_name" />
+
       <meta
         content={description ?? site?.siteMetadata?.description}
         property="og:description"
       />
 
-      <meta content="website" property="og:type" />
+      <meta content={type} property="og:type" />
 
       <meta
         content={twitterTitle ?? title ?? site?.siteMetadata?.title}
@@ -70,6 +77,11 @@ export const Seo = ({
       <meta
         content={site?.siteMetadata?.twitter?.account}
         property="twitter:site"
+      />
+
+      <meta
+        content={site?.siteMetadata?.facebook?.accountId}
+        property="fb:admins"
       />
     </Helmet>
   )

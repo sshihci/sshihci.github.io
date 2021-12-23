@@ -50,6 +50,7 @@ const NewsDetail = ({
       <Seo
         description={file.childMarkdownRemark?.excerpt}
         title={`${file.childMarkdownRemark?.frontmatter?.title} | お知らせ一覧`}
+        type="article"
       />
 
       <Section>
