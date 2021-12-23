@@ -86,7 +86,9 @@ const IndexPage = ({
         </Hero.Text>
 
         <Hero.Badge>
-          <Hero.Badge.Text>Big Data Analysis</Hero.Badge.Text>
+          <Hero.Badge.Text>
+            Big Data <br /> Analysis
+          </Hero.Badge.Text>
         </Hero.Badge>
 
         <HexagonMap className="absolute -bottom-8 left-8" />

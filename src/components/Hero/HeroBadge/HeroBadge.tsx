@@ -6,10 +6,11 @@ export const HeroBadge = forwardRef<
   JSX.IntrinsicElements['div']
 >(({ className, ...props }, ref) => {
   return (
-    <div className="absolute top-0 right-0 z-10 drop-shadow-2xl h-[448px] w-[640px]">
+    <div className="absolute top-0 right-0 z-10 drop-shadow-2xl max-h-[60%] max-w-[80%] aspect-video">
       <div
         className={clsx(
-          'flex justify-center items-center pb-44 pl-64 w-full h-full bg-cyan-500',
+          'pt-2 pr-8 pb-20 pl-40 w-full h-full bg-cyan-500',
+          'sm:pb-44 sm:pl-64',
           className,
         )}
         ref={ref}
