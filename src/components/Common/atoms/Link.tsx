@@ -16,8 +16,7 @@ export const Link = ({
       const toUrl = new URL(to)
       const locationUrl = new URL(location.href)
       return toUrl.origin === locationUrl.origin
-    } catch (e) {
-      console.error(e)
+    } catch {
       return false
     }
   }, [location.href, to])

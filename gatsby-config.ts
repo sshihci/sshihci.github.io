@@ -79,12 +79,10 @@ const config: GatsbyConfig = {
     },
     {
       options: {
+        display: 'standalone',
         icon: './src/images/icon.png',
-
         name: '清水沙友里 研究室',
-
         short_name: 'sshihci',
-
         start_url: '/',
       },
       resolve: `gatsby-plugin-manifest`,
@@ -95,6 +93,8 @@ const config: GatsbyConfig = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-preact`,
+    `gatsby-plugin-brotli`,
+    `gatsby-plugin-zopfli`,
   ],
   siteMetadata,
 }

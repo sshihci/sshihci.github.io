@@ -11,7 +11,8 @@
     "Segoe",
     "sshihci",
     "typegen",
-    "viewform"
+    "viewform",
+    "zopfli"
   ],
   "tailwindCSS.classAttributes": [
     "className",
