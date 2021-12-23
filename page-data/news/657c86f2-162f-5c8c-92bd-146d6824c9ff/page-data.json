@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-news-detail-tsx",
+    "path": "/news/657c86f2-162f-5c8c-92bd-146d6824c9ff",
+    "result": {"data":{"file":{"id":"657c86f2-162f-5c8c-92bd-146d6824c9ff","childMarkdownRemark":{"html":"<h3>お知らせです</h3>\n<p>これはテストのお知らせ</p>\n<h3>あああああ</h3>\n<p>これはサンプルです</p>\n<ul>\n<li>箇条書き 1</li>\n<li>箇条書き 2</li>\n</ul>\n<h3>お知らせです</h3>\n<p>これはテストのお知らせ</p>\n<h3>あああああ</h3>\n<p>これはサンプルです</p>\n<ul>\n<li>箇条書き 1</li>\n<li>箇条書き 2</li>\n</ul>\n<h3>お知らせです</h3>\n<p>これはテストのお知らせ</p>\n<h3>あああああ</h3>\n<p>これはサンプルです</p>\n<ul>\n<li>箇条書き 1</li>\n<li>箇条書き 2</li>\n</ul>\n<h3>お知らせです</h3>\n<p>これはテストのお知らせ</p>\n<h3>あああああ</h3>\n<p>これはサンプルです</p>\n<ul>\n<li>箇条書き 1</li>\n<li>箇条書き 2</li>\n</ul>\n<h3>お知らせです</h3>\n<p>これはテストのお知らせ</p>\n<h3>あああああ</h3>\n<p>これはサンプルです</p>\n<ul>\n<li>箇条書き 1</li>\n<li>箇条書き 2</li>\n</ul>","frontmatter":{"title":"お知らせ","date":"2021年12月7日"}}}},"pageContext":{"id":"657c86f2-162f-5c8c-92bd-146d6824c9ff"}},
+    "staticQueryHashes": ["1742117477"]}

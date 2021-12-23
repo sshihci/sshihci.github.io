@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-news-detail-tsx",
+    "path": "/news/5d9a1c95-c8fc-53ea-80c3-15a3067c641f",
+    "result": {"data":{"file":{"id":"5d9a1c95-c8fc-53ea-80c3-15a3067c641f","childMarkdownRemark":{"html":"<h1>お知らせです</h1>","frontmatter":{"title":"お知らせ","date":"2021年12月6日"}}}},"pageContext":{"id":"5d9a1c95-c8fc-53ea-80c3-15a3067c641f"}},
+    "staticQueryHashes": ["1742117477"]}
