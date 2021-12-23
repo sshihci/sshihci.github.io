@@ -41,15 +41,15 @@ const NewsDetail = ({
   }, [data.byName, data.bySlug])
 
   if (!file) {
-    navigate('/404')
+    void navigate('/404')
     return <Layout />
   }
 
   return (
     <Layout>
       <Seo
-        title={`${file.childMarkdownRemark?.frontmatter?.title} | お知らせ一覧`}
         description={file.childMarkdownRemark?.excerpt}
+        title={`${file.childMarkdownRemark?.frontmatter?.title} | お知らせ一覧`}
       />
 
       <Section>
