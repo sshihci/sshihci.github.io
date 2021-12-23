@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { useMemo } from 'react'
 import { VscCircleFilled, VscCircleLargeFilled } from 'react-icons/vsc'
 import { useBoolean } from '~/hooks/useBoolean'
@@ -31,16 +31,16 @@ export const PagerDot = ({
         onTouchStart={setTrue}
         type="button"
       >
-        <motion.div animate={{ scale: isHovered ? 0.1 : 1 }}>
+        <m.div animate={{ scale: isHovered ? 0.1 : 1 }}>
           <Dot size={12} />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           animate={{ scale: isHovered ? 1 : 0 }}
           className="absolute -top-2"
         >
           <span>{page}</span>
-        </motion.div>
+        </m.div>
       </button>
     </div>
   )

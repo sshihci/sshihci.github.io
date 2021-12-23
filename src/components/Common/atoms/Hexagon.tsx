@@ -1,9 +1,4 @@
-import {
-  motion,
-  MotionValue,
-  useMotionValue,
-  useTransform,
-} from 'framer-motion'
+import { m, MotionValue, useMotionValue, useTransform } from 'framer-motion'
 import { RefObject, useEffect, useRef } from 'react'
 import { useRelativePosition } from '~/hooks/useRelativePosition'
 
@@ -48,19 +43,9 @@ export const Hexagon = ({
       viewBox="-150 -150 300 300"
       width={size}
     >
-      <motion.path
-        // animate={{
-        //   fill: ['#93DAE3', '#000000', '#93DAE3'],
-        // }}
+      <m.path
         d="M130 75 L0 150 L-130 75 L-130 -75 L-0 -150 L130 -75 z"
         fill={color}
-        // transition={{
-        //   duration: DURATION,
-        //   ease: 'linear',
-        //   repeat: Infinity,
-        //   repeatDelay: delay,
-        //   repeatType: 'loop',
-        // }}
       />
     </svg>
   )

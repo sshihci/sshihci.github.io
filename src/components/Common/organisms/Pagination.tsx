@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { Key, ReactNode, useRef } from 'react'
 import { usePagination } from '~/hooks/usePagination'
 import { usePosition } from '~/hooks/usePosition'
@@ -18,7 +18,7 @@ const PaginationItem = ({
   const position = usePosition(ref)
 
   return (
-    <motion.div
+    <m.div
       animate={{ opacity: 1, x: 0 }}
       exit={{
         opacity: 0,
@@ -35,7 +35,7 @@ const PaginationItem = ({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
