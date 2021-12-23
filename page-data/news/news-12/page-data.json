@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-news-detail-tsx",
     "path": "/news/news-12",
     "result": {"data":{"bySlug":{"id":"0b6b4fc7-452a-5267-8060-b150886a28d1","childMarkdownRemark":{"html":"<h1>お知らせです</h1>","excerpt":"お知らせです","frontmatter":{"title":"お知らせ","date":"2021年12月6日"}}},"byName":{"id":"0b6b4fc7-452a-5267-8060-b150886a28d1","childMarkdownRemark":{"html":"<h1>お知らせです</h1>","excerpt":"お知らせです","frontmatter":{"title":"お知らせ","date":"2021年12月6日"}}}},"pageContext":{"name":"2021-12-06 copy 8","slug":"news-12"}},
-    "staticQueryHashes": ["1742117477","1919778071"]}
+    "staticQueryHashes": ["1742117477","2515209461"]}
