@@ -3,7 +3,9 @@ import { getImage, StaticImage } from 'gatsby-plugin-image'
 import { useMemo } from 'react'
 import { Link } from '~/components/Common/atoms/Link'
 import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
+import { File } from '~/components/Common/organisms/File'
 import { Layout } from '~/components/Common/templates/Layout'
+import { Seo } from '~/components/Common/templates/seo'
 import ContactForm from '~/components/ContactForm'
 import { ContactFormButton } from '~/components/ContactForm/ContactFormButton'
 import Hero from '~/components/Hero'
@@ -20,11 +22,13 @@ export const query = graphql`
     ) {
       nodes {
         id
+        name
         childMarkdownRemark {
           frontmatter {
             date
             title
             description
+            slug
           }
         }
       }
@@ -77,12 +81,21 @@ const IndexPage = ({
 
   return (
     <Layout>
+      <Seo />
+
       <Hero className="mb-8">
         {hero && <Hero.Image alt="" image={hero} />}
 
         <Hero.Text>
-          Health Data Science Frontier. <br />
-          データで医療を変えていく
+          <span className="text-4xl leading-normal">
+            Health Data Science Frontier.
+          </span>
+
+          <br />
+
+          <span className="text-5xl leading-normal">
+            データで医療を変えていく
+          </span>
         </Hero.Text>
 
         <Hero.Badge>
@@ -156,8 +169,11 @@ const IndexPage = ({
 
         <Section.Body>
           <NewsList className="mb-8">
-            {data.allFile.nodes.map(({ id, childMarkdownRemark }) => (
-              <NewsList.Item key={id} newsId={id}>
+            {data.allFile.nodes.map(({ id, name, childMarkdownRemark }) => (
+              <NewsList.Item
+                key={id}
+                newsId={childMarkdownRemark?.frontmatter?.slug ?? name}
+              >
                 <NewsList.Item.Title>
                   {childMarkdownRemark?.frontmatter?.title}
                 </NewsList.Item.Title>
@@ -180,7 +196,19 @@ const IndexPage = ({
       <Section id="データの更新">
         <Section.Title>データの更新</Section.Title>
 
-        <Section.Body />
+        <Section.Body>
+          <div className="flex flex-col gap-1 max-w-md">
+            <File name="POST.pdf" />
+
+            <File name="郵便番号二次医療圏対応表2017.xlsx" />
+
+            <File name="PHA2017_6月版.xlsx" />
+
+            <File name="HOSPPHA.pdf" />
+
+            <File name="HOSP2017_7月版.xlsx" />
+          </div>
+        </Section.Body>
       </Section>
 
       <Section className="z-0" id="お問い合わせ">

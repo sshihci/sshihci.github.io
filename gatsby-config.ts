@@ -1,6 +1,28 @@
 import type { GatsbyConfig } from 'gatsby'
 import { resolve } from 'path'
 
+const siteMetadata = {
+  contact: {
+    fields: {
+      belongs: 'entry.1239432921',
+      body: 'entry.911358195',
+      contactAddress: 'entry.527437244',
+      name: 'entry.814214239',
+    },
+    googleFormUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLSdIlc0UtgbxsrB7KaGIP21jTFWAjPPpPsxL1tT-e_AAg7e6Mw/viewform',
+  },
+  description: `横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻 の 清水沙友里です。`,
+  newsPerPage: 5, // お知らせ一覧で１ページで表示されるお知らせの数
+  siteUrl: 'https://sshihci.github.io/',
+  subTitle: '横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻',
+  title: '清水沙友里 研究室',
+  twitter: {
+    account: 'ycuhds',
+    creator: '3594914',
+  },
+}
+
 const config: GatsbyConfig = {
   plugins: [
     `gatsby-plugin-postcss`,
@@ -21,6 +43,14 @@ const config: GatsbyConfig = {
         ignore: [`${__dirname}/src/__generated__/*.ts`],
         name: `news`,
         path: `${__dirname}/src/contents/news/`,
+      },
+      resolve: `gatsby-source-filesystem`,
+    },
+    {
+      options: {
+        ignore: [`${__dirname}/src/__generated__/*.ts`],
+        name: `data`,
+        path: `${__dirname}/src/contents/data/`,
       },
       resolve: `gatsby-source-filesystem`,
     },
@@ -56,22 +86,10 @@ const config: GatsbyConfig = {
       },
       resolve: `gatsby-plugin-manifest`,
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
   ],
-  siteMetadata: {
-    contact: {
-      fields: {
-        belongs: 'entry.1239432921',
-        body: 'entry.911358195',
-        contactAddress: 'entry.527437244',
-        name: 'entry.814214239',
-      },
-      googleFormUrl:
-        'https://docs.google.com/forms/d/e/1FAIpQLSdIlc0UtgbxsrB7KaGIP21jTFWAjPPpPsxL1tT-e_AAg7e6Mw/viewform',
-    },
-    siteUrl: 'https://www.yourdomain.tld',
-    subTitle: '横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻',
-    title: '清水沙友里 研究室',
-  },
+  siteMetadata,
 }
 
 export default config

@@ -1,15 +1,22 @@
 import clsx from 'clsx'
-import { forwardRef } from 'react'
+import GatsbyLink from 'gatsby-link'
+import { ReactNode } from 'react'
 
-export const HeaderTitleWrapper = forwardRef<
-  HTMLDivElement,
-  JSX.IntrinsicElements['div']
->(({ className, ...props }, ref) => {
+type HeaderTitleWrapperProps = {
+  className?: string
+  children?: ReactNode
+}
+
+export const HeaderTitleWrapper = ({
+  className,
+  children,
+}: HeaderTitleWrapperProps): JSX.Element => {
   return (
-    <div
+    <GatsbyLink
       className={clsx('flex flex-col-reverse gap-4', className)}
-      ref={ref}
-      {...props}
-    />
+      to="/"
+    >
+      {children}
+    </GatsbyLink>
   )
-})
+}

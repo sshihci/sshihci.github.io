@@ -59,18 +59,32 @@ export const createPages: GatsbyNode['createPages'] = async ({
   reporter,
 }) => {
   const result = await graphql<{
-    allNews: { nodes: { id: string }[] }
+    allNews: {
+      nodes: {
+        name: string
+        childMarkdownRemark: { frontmatter: { slug: string } }
+      }[]
+    }
   }>(/* GraphQL */ `
     query CreatePages {
       allNews: allFile(
-        filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
+        filter: {
+          sourceInstanceName: { eq: "news" }
+          name: { ne: "sample" }
+          extension: { eq: "md" }
+        }
         sort: {
           fields: childrenMarkdownRemark___frontmatter___date
           order: DESC
         }
       ) {
         nodes {
-          id
+          name
+          childMarkdownRemark {
+            frontmatter {
+              slug
+            }
+          }
         }
       }
     }
@@ -82,13 +96,21 @@ export const createPages: GatsbyNode['createPages'] = async ({
     return
   }
 
-  result.data?.allNews.nodes.forEach(({ id }) => {
-    actions.createPage({
-      component: resolve('./src/templates/NewsDetail.tsx'),
-      context: {
-        id,
+  result.data?.allNews.nodes.forEach(
+    ({
+      name,
+      childMarkdownRemark: {
+        frontmatter: { slug },
       },
-      path: `/news/${id}`,
-    })
-  })
+    }) => {
+      actions.createPage({
+        component: resolve('./src/templates/NewsDetail.tsx'),
+        context: {
+          name,
+          slug,
+        },
+        path: `/news/${slug || name}`,
+      })
+    },
+  )
 }

@@ -1,18 +1,33 @@
-import { graphql, PageProps } from 'gatsby'
+import { graphql, navigate, PageProps } from 'gatsby'
 import GatsbyLink from 'gatsby-link'
+import { useMemo } from 'react'
 import { Layout } from '~/components/Common/templates/Layout'
+import { Seo } from '~/components/Common/templates/seo'
 import Section from '~/components/Section'
 
 export const query = graphql`
-  query NewsDetailPage($id: String!) {
-    file(id: { eq: $id }) {
+  fragment NewsDetail on MarkdownRemark {
+    html
+    excerpt(pruneLength: 80)
+    frontmatter {
+      title
+      date
+    }
+  }
+
+  query NewsDetailPage($slug: String!, $name: String!) {
+    bySlug: file(
+      childMarkdownRemark: { frontmatter: { slug: { eq: $slug } } }
+    ) {
       id
       childMarkdownRemark {
-        html
-        frontmatter {
-          title
-          date
-        }
+        ...NewsDetail
+      }
+    }
+    byName: file(name: { eq: $name }) {
+      id
+      childMarkdownRemark {
+        ...NewsDetail
       }
     }
   }
@@ -21,8 +36,22 @@ export const query = graphql`
 const NewsDetail = ({
   data,
 }: PageProps<GatsbyTypes.NewsDetailPageQuery>): JSX.Element => {
+  const file = useMemo(() => {
+    return data.bySlug || data.byName
+  }, [data.byName, data.bySlug])
+
+  if (!file) {
+    navigate('/404')
+    return <Layout />
+  }
+
   return (
     <Layout>
+      <Seo
+        title={`${file.childMarkdownRemark?.frontmatter?.title} | お知らせ一覧`}
+        description={file.childMarkdownRemark?.excerpt}
+      />
+
       <Section>
         <Section.Title>お知らせ</Section.Title>
 
@@ -37,16 +66,14 @@ const NewsDetail = ({
           </div>
 
           <article className="mx-auto max-w-3xl prose-h1:font-bold prose">
-            <h1>{data.file?.childMarkdownRemark?.frontmatter?.title}</h1>
+            <h1>{file.childMarkdownRemark?.frontmatter?.title}</h1>
 
-            <p className="">
-              {data.file?.childMarkdownRemark?.frontmatter?.date}
-            </p>
+            <p className="">{file.childMarkdownRemark?.frontmatter?.date}</p>
 
             <div
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
-                __html: data.file?.childMarkdownRemark?.html ?? '',
+                __html: file.childMarkdownRemark?.html ?? '',
               }}
             />
           </article>

@@ -5,6 +5,7 @@ import {
   PaginationRenderItem,
 } from '~/components/Common/organisms/Pagination'
 import { Layout } from '~/components/Common/templates/Layout'
+import { Seo } from '~/components/Common/templates/seo'
 import Section from '~/components/Section'
 
 export const query = graphql`
@@ -26,6 +27,11 @@ export const query = graphql`
     ) {
       nodes {
         ...NewsItem
+      }
+    }
+    site {
+      siteMetadata {
+        newsPerPage
       }
     }
   }
@@ -62,6 +68,8 @@ const NewsPage = ({
 }: PageProps<GatsbyTypes.NewsPageQuery>): JSX.Element => {
   return (
     <Layout>
+      <Seo title="お知らせ一覧" />
+
       <Section>
         <Section.Title>お知らせ一覧</Section.Title>
 
@@ -72,7 +80,7 @@ const NewsPage = ({
             items={data.allFile.nodes}
             keyExtractor={keyExtractor}
             listClassName="mb-4"
-            perPage={5}
+            perPage={data.site?.siteMetadata?.newsPerPage ?? 5}
             renderItem={RenderItem}
           />
         </Section.Body>
