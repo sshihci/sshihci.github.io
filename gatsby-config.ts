@@ -92,6 +92,8 @@ const config: GatsbyConfig = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-preact`,
   ],
   siteMetadata,
 }

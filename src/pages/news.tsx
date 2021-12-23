@@ -11,11 +11,13 @@ import Section from '~/components/Section'
 export const query = graphql`
   fragment NewsItem on File {
     id
+    name
     childMarkdownRemark {
       frontmatter {
         date
         title
         description
+        slug
       }
       excerpt(pruneLength: 50)
     }
@@ -46,7 +48,7 @@ const RenderItem: PaginationRenderItem<
   return (
     <GatsbyLink
       className="flex flex-row items-end mb-4 border-b border-cyan-600 hover:bg-cyan-50"
-      to={`/news/${item.id}`}
+      to={`/news/${item.childMarkdownRemark?.frontmatter?.slug || item.name}`}
     >
       <div className="flex flex-col-reverse flex-shrink-0">
         <p className="py-2 px-6 group-hover:text-gray-700">
