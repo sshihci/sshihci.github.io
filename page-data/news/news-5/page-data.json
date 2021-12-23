@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-news-detail-tsx",
+    "path": "/news/news-5",
+    "result": {"data":{"bySlug":{"id":"16bdec74-23e4-597c-9990-244ac33a45e8","childMarkdownRemark":{"html":"<h1>お知らせです</h1>","excerpt":"お知らせです","frontmatter":{"title":"お知らせ","date":"2021年12月4日"}}},"byName":{"id":"16bdec74-23e4-597c-9990-244ac33a45e8","childMarkdownRemark":{"html":"<h1>お知らせです</h1>","excerpt":"お知らせです","frontmatter":{"title":"お知らせ","date":"2021年12月4日"}}}},"pageContext":{"name":"2021-12-04","slug":"news-5"}},
+    "staticQueryHashes": ["1742117477","1919778071"]}
