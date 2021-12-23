@@ -89,6 +89,7 @@ const config: GatsbyConfig = {
       },
       resolve: `gatsby-plugin-manifest`,
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
