@@ -1,11 +1,7 @@
 import { NewsList as NewsListRoot } from './NewsList'
-import NewsListItem from './NewsListItem'
 
-type NewsList = typeof NewsListRoot & {
-  Item: typeof NewsListItem
-}
+type NewsList = typeof NewsListRoot
 
-const NewsList = NewsListRoot as NewsList
-NewsList.Item = NewsListItem
+const NewsList = NewsListRoot
 
 export default NewsList

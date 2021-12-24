@@ -1,5 +1,5 @@
 import { graphql as graphql, PageProps } from 'gatsby'
-import GatsbyLink from 'gatsby-link'
+import { NewsListItem } from '~/components/Common/organisms/NewsListItem'
 import {
   Pagination,
   PaginationRenderItem,
@@ -11,16 +11,7 @@ import Section from '~/components/Section'
 export const query = graphql`
   fragment NewsItem on File {
     id
-    name
-    childMarkdownRemark {
-      frontmatter {
-        date
-        title
-        description
-        slug
-      }
-      excerpt(pruneLength: 50)
-    }
+    ...NewsListItem
   }
   query NewsPage {
     allFile(
@@ -45,24 +36,25 @@ const RenderItem: PaginationRenderItem<
   GatsbyTypes.NewsItemFragment,
   Record<string, unknown>
 > = ({ item }) => {
-  return (
-    <GatsbyLink
-      className="flex flex-row items-end mb-4 border-b border-cyan-600 hover:bg-cyan-50"
-      to={`/news/${item.childMarkdownRemark?.frontmatter?.slug || item.name}`}
-    >
-      <div className="flex flex-col-reverse flex-shrink-0">
-        <p className="py-2 px-6 group-hover:text-gray-700">
-          {item.childMarkdownRemark?.frontmatter?.title}
-        </p>
+  return <NewsListItem {...item} />
+  // return (
+  //   <GatsbyLink
+  //     className="flex flex-row items-end mb-4 border-b border-cyan-600 hover:bg-cyan-50"
+  //     to={`/news/${item.childMarkdownRemark?.frontmatter?.slug || item.name}`}
+  //   >
+  //     <div className="flex flex-col-reverse flex-shrink-0">
+  //       <p className="py-2 px-6 group-hover:text-gray-700">
+  //         {item.childMarkdownRemark?.frontmatter?.title}
+  //       </p>
 
-        <p className="font-light text-cyan-600 group-hover:text-cyan-700">
-          {item.childMarkdownRemark?.frontmatter?.date}
-        </p>
-      </div>
+  //       <p className="font-light text-cyan-600 group-hover:text-cyan-700">
+  //         {item.childMarkdownRemark?.frontmatter?.date}
+  //       </p>
+  //     </div>
 
-      <p className="py-1 px-3 text-sm">{item.childMarkdownRemark?.excerpt}</p>
-    </GatsbyLink>
-  )
+  //     <p className="py-1 px-3 text-sm">{item.childMarkdownRemark?.excerpt}</p>
+  //   </GatsbyLink>
+  // )
 }
 
 const NewsPage = ({

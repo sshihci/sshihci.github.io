@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import { Link } from '~/components/Common/atoms/Link'
 import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
 import { File } from '~/components/Common/organisms/File'
+import { NewsListItem } from '~/components/Common/organisms/NewsListItem'
 import { Layout } from '~/components/Common/templates/Layout'
 import { Seo } from '~/components/Common/templates/seo'
 import ContactForm from '~/components/ContactForm'
@@ -22,15 +23,7 @@ export const query = graphql`
     ) {
       nodes {
         id
-        name
-        childMarkdownRemark {
-          frontmatter {
-            date
-            title
-            description
-            slug
-          }
-        }
+        ...NewsListItem
       }
     }
     hero: file(sourceInstanceName: { eq: "images" }, name: { eq: "hero" }) {
@@ -169,19 +162,8 @@ const IndexPage = ({
 
         <Section.Body>
           <NewsList className="mb-8">
-            {data.allFile.nodes.map(({ id, name, childMarkdownRemark }) => (
-              <NewsList.Item
-                key={id}
-                newsId={childMarkdownRemark?.frontmatter?.slug ?? name}
-              >
-                <NewsList.Item.Title>
-                  {childMarkdownRemark?.frontmatter?.title}
-                </NewsList.Item.Title>
-
-                <NewsList.Item.Date>
-                  {childMarkdownRemark?.frontmatter?.date}
-                </NewsList.Item.Date>
-              </NewsList.Item>
+            {data.allFile.nodes.map((news) => (
+              <NewsListItem key={news.id} {...news} />
             ))}
           </NewsList>
 
