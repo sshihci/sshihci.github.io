@@ -281,7 +281,12 @@ const IndexPage = ({
 
         <Section.Body>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-            <a className="block flex-1 md:h-full" href="#">
+            <a
+              className="block flex-1 md:h-full"
+              href="https://www-user.yokohama-cu.ac.jp/~ycuds/hds/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <span className="sr-only">
                 横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻
               </span>
@@ -293,7 +298,12 @@ const IndexPage = ({
               />
             </a>
 
-            <a className="block flex-1 md:h-full" href="#">
+            <a
+              className="block flex-1 md:h-full"
+              href="https://www.yokohama-cu.ac.jp/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <span className="sr-only">横浜市立大学</span>
 
               <StaticImage
