@@ -93,8 +93,18 @@ const config: GatsbyConfig = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-preact`,
-    `gatsby-plugin-brotli`,
-    `gatsby-plugin-zopfli`,
+    {
+      options: {
+        extensions: ['css', 'html', 'js'],
+      },
+      resolve: `gatsby-plugin-brotli`,
+    },
+    {
+      options: {
+        extensions: ['css', 'html', 'js'],
+      },
+      resolve: `gatsby-plugin-zopfli`,
+    },
   ],
   siteMetadata,
 }
