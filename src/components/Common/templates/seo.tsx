@@ -8,6 +8,7 @@ type SEOProps = {
   twitterTitle?: string | undefined
   twitterDescription?: string | undefined
   type?: 'website' | 'article'
+  robots?: 'noindex' | undefined
 }
 
 export const Seo = ({
@@ -16,6 +17,7 @@ export const Seo = ({
   twitterTitle,
   twitterDescription,
   type = 'website',
+  robots,
 }: SEOProps): JSX.Element => {
   const { site } = useStaticQuery<SeoQuery>(graphql`
     query Seo {
@@ -46,6 +48,8 @@ export const Seo = ({
         content={description ?? site?.siteMetadata?.description}
         property="description"
       />
+
+      {robots && <meta content={robots} name="robots" />}
 
       <meta content={title} property="og:title" />
 

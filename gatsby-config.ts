@@ -38,8 +38,33 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-alias-imports`,
     },
     `gatsby-plugin-image`,
+    {
+      options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            options: {
+              exclude: '目次',
+              fromHeading: 3,
+              tight: true,
+            },
+            resolve: `gatsby-remark-table-of-contents`,
+          },
+          `gatsby-remark-katex`,
+          {
+            options: {
+              backgroundColor: 'transparent',
+              disableBgImage: true,
+              quality: 100,
+              wrapperStyle: 'max-height: 384px;overflow: hidden;',
+            },
+            resolve: `gatsby-remark-images`,
+          },
+        ],
+      },
+      resolve: `gatsby-transformer-remark`,
+    },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     {
       options: {
@@ -65,22 +90,6 @@ const config: GatsbyConfig = {
       },
       resolve: `gatsby-source-filesystem`,
     },
-    // {
-    //   options: {
-    //     emitPluginDocuments: {
-    //       [`${__dirname}/src/__generated__/gatsby-plugin-documents.graphql`]:
-    //         true,
-    //     },
-    //     emitSchema: {
-    //       [`${__dirname}/src/__generated__/gatsby-introspection.json`]: true,
-    //     },
-    //     scalars: {
-    //       Hoge: 'string',
-    //       JSON: 'any',
-    //     },
-    //   },
-    //   resolve: `gatsby-plugin-typegen`,
-    // },
     {
       options: {
         codegenConfig: {

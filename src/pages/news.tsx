@@ -16,7 +16,11 @@ export const query = graphql`
   }
   query NewsPage {
     allFile(
-      filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
+      filter: {
+        sourceInstanceName: { eq: "news" }
+        name: { ne: "sample" }
+        childMarkdownRemark: { frontmatter: { noIndex: { ne: true } } }
+      }
       sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
     ) {
       nodes {

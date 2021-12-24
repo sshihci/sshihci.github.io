@@ -9,17 +9,18 @@ import {
 } from 'react-icons/ai'
 import { FileQuery } from '~graphql-types'
 
-type FileProps = {
-  name: string
-}
-
 const fileIcon: Record<string, IconType> = {
   pdf: AiOutlineFilePdf,
   xlsx: AiOutlineFileExcel,
   xlx: AiOutlineFileExcel,
 }
 
-export const File = ({ name }: FileProps): JSX.Element => {
+export type FileProps = {
+  name: string
+  className?: string
+}
+
+export const File = ({ name, className }: FileProps): JSX.Element => {
   const { allFile } = useStaticQuery<FileQuery>(graphql`
     query File {
       allFile(filter: { sourceInstanceName: { eq: "data" } }) {
@@ -53,17 +54,18 @@ export const File = ({ name }: FileProps): JSX.Element => {
     <div>
       <a
         className={clsx(
-          'flex flex-row gap-2 items-center py-2 px-4 rounded-md border',
+          'flex flex-row flex-nowrap gap-2 items-center py-2 px-4 rounded-md border',
           file.extension === 'pdf'
             ? 'text-white bg-rose-500 border-rose-500'
             : file.extension === 'xlsx' || file.extension === 'xlx'
             ? 'text-white bg-emerald-500 border-emerald-500'
             : 'bg-white border-gray-600',
+          className,
         )}
         download
         href={file.publicURL}
       >
-        <Icon className="" size={48} />
+        <Icon className="flex-shrink-0" size={48} />
 
         <span className="text-lg">{file.base}</span>
       </a>

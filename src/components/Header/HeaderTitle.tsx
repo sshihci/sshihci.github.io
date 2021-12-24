@@ -2,11 +2,11 @@ import clsx from 'clsx'
 import { forwardRef } from 'react'
 
 export const HeaderTitle = forwardRef<
-  HTMLHeadingElement,
-  JSX.IntrinsicElements['h1']
+  HTMLParagraphElement,
+  JSX.IntrinsicElements['p']
 >(({ className, ...props }, ref) => {
   return (
-    <h1
+    <p
       className={clsx('px-1 text-2xl sm:text-4xl font-light', className)}
       ref={ref}
       {...props}

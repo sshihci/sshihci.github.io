@@ -20,22 +20,6 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
         googleFormId: String
       }
     `)
-    actions.createTypes(/* GraphQL */ `
-      enum ImageCropFocus {
-        CENTER
-        NORTH
-        NORTHEAST
-        EAST
-        SOUTHEAST
-        SOUTH
-        SOUTHWEST
-        WEST
-        NORTHWEST
-        ENTROPY
-        ATTENTION
-        TOP_RIGHT
-      }
-    `)
   }
 
 export const createResolvers: GatsbyNode['createResolvers'] = ({
@@ -85,11 +69,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }>(/* GraphQL */ `
     query CreatePages {
       allNews: allFile(
-        filter: {
-          sourceInstanceName: { eq: "news" }
-          name: { ne: "sample" }
-          extension: { eq: "md" }
-        }
+        filter: { sourceInstanceName: { eq: "news" }, extension: { eq: "md" } }
         sort: {
           fields: childrenMarkdownRemark___frontmatter___date
           order: DESC

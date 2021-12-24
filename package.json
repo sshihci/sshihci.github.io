@@ -27,7 +27,9 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
-    "react-toast-notifications": "^2.5.1"
+    "react-toast-notifications": "^2.5.1",
+    "rehype-react": "^7.0.3",
+    "unified": "^10.1.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.4.0",
@@ -53,9 +55,14 @@
     "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
     "gatsby-plugin-zopfli": "^2.0.0",
+    "gatsby-remark-autolink-headers": "^5.4.0",
+    "gatsby-remark-images": "^6.4.0",
+    "gatsby-remark-katex": "^6.4.0",
+    "gatsby-remark-table-of-contents": "^1.0.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
+    "katex": "^0.15.1",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.7",

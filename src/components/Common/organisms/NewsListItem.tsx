@@ -9,7 +9,6 @@ export const NewsListItemFragment = graphql`
       frontmatter {
         date
         title
-        description
         slug
       }
       excerpt(pruneLength: 50)
