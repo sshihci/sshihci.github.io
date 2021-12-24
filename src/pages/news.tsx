@@ -19,6 +19,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "news" }
         name: { ne: "sample" }
+        extension: { eq: "md" }
         childMarkdownRemark: { frontmatter: { noIndex: { ne: true } } }
       }
       sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
