@@ -25,6 +25,7 @@ exclude:
 - [ファイルの更新方法](../how-to-update-file)
 - [ファイルの削除方法](../how-to-delete-file)
 - [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
 
 ### お知らせについて
 

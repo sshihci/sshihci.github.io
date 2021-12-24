@@ -13,4 +13,5 @@ https://sshihci.github.io/
 - ファイルの更新方法 https://sshihci.github.io/news/how-to-update-file
 - ファイルの削除方法 https://sshihci.github.io/news/how-to-delete-file
 - サイトの更新状態の確認方法 https://sshihci.github.io/news/how-to-check-deploy
+- お問い合わせフォームの設定方法 https://sshihci.github.io/news/how-to-connect-contact-form
 - 開発方法 https://sshihci.github.io/news/how-to-development
