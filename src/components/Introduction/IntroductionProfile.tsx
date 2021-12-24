@@ -7,7 +7,10 @@ export const IntroductionProfile = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <p
-      className={clsx('text-lg text-justify', className)}
+      className={clsx(
+        'text-lg tracking-wider leading-loose text-justify',
+        className,
+      )}
       ref={ref}
       {...props}
     />
