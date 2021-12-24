@@ -13,17 +13,6 @@ noIndex: true
 
 このファイルは、 [`src/contents/news/how-to-connect-contact-form.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-connect-contact-form.md) に対応しています。
 
-### 関連リンク
-
-- [お知らせの作成方法](../how-to-create-news)
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルのアップロード方法](../how-to-upload-file)
-- [ファイルの更新方法](../how-to-upload-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [サイトの更新状態の確認方法](../how-to-check-deploy)
-- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
-
 ### お問い合わせフォームと Google フォームの連携方法
 
 1. Google フォームを作成します。
@@ -48,7 +37,7 @@ noIndex: true
 
    1. 1 で作成した Google フォームの上部にある「目のボタン(プレビュー）」を押す。
    2. 開いたページの URL を確認します。（後ほど使います。）
-   3. まずは適当にフォームに値を入力します。
+   3. 4.2 で開いたフォームに適当な値を入力します。
    4. 開発者ツールを開きます。
       - https://developer.mozilla.org/ja/docs/Learn/Common_questions/What_are_browser_developer_tools ここが参考になります。
    5. 開発者ツールの中の `Inspector` や `Element`, `要素` などといった名前のタブを開きます。
@@ -77,3 +66,14 @@ noIndex: true
       - ラジオボタンは、「`Commit directly to the develop branch.`」を選択してください
 
 これで設定は終了です。5~10 分ほどすると更新が反映されます。
+
+### 関連リンク
+
+- [お知らせの作成方法](../how-to-create-news)
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの更新方法](../how-to-upload-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)

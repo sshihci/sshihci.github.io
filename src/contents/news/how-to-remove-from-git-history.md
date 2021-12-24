@@ -13,17 +13,6 @@ noIndex: true
 
 このファイルは、 [`src/contents/news/how-to-remove-from-git-history.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-remove-from-git-history.md) に対応しています。
 
-### 関連リンク
-
-- [お知らせの作成方法](../how-to-create-news)
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルのアップロード方法](../how-to-upload-file)
-- [ファイルの更新方法](../how-to-update-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [サイトの更新状態の確認方法](../how-to-check-deploy)
-- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
-
 ### なぜ秘密情報を含むファイルを削除・修正するだけではダメか
 
 GitHub で管理しているファイルなどは `git` というバージョン管理ツールを用いて更新履歴などの管理がされています。
@@ -43,3 +32,14 @@ GitHub で管理しているファイルなどは `git` というバージョン
 ひとまず以上の対応を迅速に行えれば被害は最小になると期待できます。
 
 また、必要があれば GitHub に対して、その情報の閲覧履歴などを請求できるかもしれませんが、ほとんど場合それは難しいです。
+
+### 関連リンク
+
+- [お知らせの作成方法](../how-to-create-news)
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの更新方法](../how-to-update-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)

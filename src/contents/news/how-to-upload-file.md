@@ -13,17 +13,6 @@ noIndex: true
 
 このファイルは、 [`src/contents/news/how-to-upload-file.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-upload-file.md) に対応しています。
 
-### 関連リンク
-
-- [お知らせの作成方法](../how-to-create-news)
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルの更新方法](../how-to-update-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [サイトの更新状態の確認方法](../how-to-check-deploy)
-- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
-- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
-
 ### ファイルのアップロード方法
 
 1. [`src/contents/data`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/data) フォルダーを開きます。
@@ -46,3 +35,16 @@ noIndex: true
 ```
 
 とすると、その場所にファイルが表示されます。
+
+参考: [お知らせの書き方 兼 サンプル#ファイル](https://sshihci.github.io/news/how-to-create-news/#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB) も合わせてご確認ください
+
+### 関連リンク
+
+- [お知らせの作成方法](../how-to-create-news)
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルの更新方法](../how-to-update-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)

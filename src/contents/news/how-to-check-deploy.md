@@ -11,17 +11,6 @@ noIndex: true
 
 ```
 
-### 関連リンク
-
-- [お知らせの作成方法](../how-to-create-news)
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルのアップロード方法](../how-to-upload-file)
-- [ファイルの更新方法](../how-to-update-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
-- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
-
 ### サイトの更新状態の確認方法
 
 [![Deploy to GitHub Pages](https://github.com/sshihci/sshihci.github.io/actions/workflows/gh-pages.yml/badge.svg?branch=develop)](https://github.com/sshihci/sshihci.github.io/actions/workflows/gh-pages.yml)
@@ -35,3 +24,14 @@ noIndex: true
 - 一番上のステータスが赤色の場合は、最新の更新に失敗しています。
 
 更新に失敗してしまっている場合はご連絡ください。
+
+### 関連リンク
+
+- [お知らせの作成方法](../how-to-create-news)
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの更新方法](../how-to-update-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)

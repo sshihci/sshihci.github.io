@@ -17,17 +17,6 @@ exclude:
 
 このファイルは、 [`src/contents/news/how-to-create-news.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-create-news.md) に対応しています。
 
-### 関連リンク
-
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルのアップロード方法](../how-to-upload-file)
-- [ファイルの更新方法](../how-to-update-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [サイトの更新状態の確認方法](../how-to-check-deploy)
-- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
-- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
-
 ### お知らせについて
 
 お知らせは、 [`src/contents/news`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news) に `.md` で終わるファイルを作成することで、お知らせを作成することができます。
@@ -290,3 +279,14 @@ $$
 ```
 
 <file name="sample.xlsx"></file>
+
+### 関連リンク
+
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの更新方法](../how-to-update-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)

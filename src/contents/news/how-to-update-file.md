@@ -13,17 +13,6 @@ noIndex: true
 
 このファイルは、 [`src/contents/news/how-to-update-file.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-update-file.md) に対応しています。
 
-### 関連リンク
-
-- [お知らせの作成方法](../how-to-create-news)
-- [お知らせの更新方法](../how-to-update-news)
-- [お知らせの削除方法](../how-to-delete-news)
-- [ファイルのアップロード方法](../how-to-upload-file)
-- [ファイルの削除方法](../how-to-delete-file)
-- [サイトの更新状態の確認方法](../how-to-check-deploy)
-- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
-- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
-
 ### ファイルの更新方法
 
 ※ 更新したいファイルに秘密情報が含まれる場合は [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history) も合わせてご確認ください
@@ -34,3 +23,14 @@ noIndex: true
 - [ファイルのアップロード方法](../how-to-upload-file)
 
 を確認してみてください。
+
+### 関連リンク
+
+- [お知らせの作成方法](../how-to-create-news)
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
