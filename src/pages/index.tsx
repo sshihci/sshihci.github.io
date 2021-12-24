@@ -167,11 +167,9 @@ const IndexPage = ({
             ))}
           </NewsList>
 
-          <div className="mx-auto max-w-4xl">
-            <Link className="block ml-auto max-w-max" to="/news">
-              お知らせ一覧
-            </Link>
-          </div>
+          <Link className="block ml-auto max-w-max" to="/news">
+            お知らせ一覧
+          </Link>
         </Section.Body>
       </Section>
 

@@ -7,7 +7,7 @@ export const SectionBody = forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <div
-      className={clsx('py-12 px-4 sm:px-8 mx-auto max-w-5xl', className)}
+      className={clsx('py-12 px-4 sm:px-8 mx-auto max-w-6xl', className)}
       ref={ref}
       {...props}
     />
