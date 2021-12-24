@@ -3,13 +3,14 @@ import { ReactNode } from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '~/components/Footer'
 import Header from '~/components/Header'
+import { LayoutQuery } from '~graphql-types'
 
 type LayoutProps = {
   children?: ReactNode
 }
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
-  const { site } = useStaticQuery<GatsbyTypes.LayoutQuery>(graphql`
+  const { site } = useStaticQuery<LayoutQuery>(graphql`
     query Layout {
       site {
         siteMetadata {
@@ -33,7 +34,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         </Header.TitleWrapper>
 
         <Header.Nav>
-          <Header.Nav.Item to="/#研究内容の紹介">研究概要</Header.Nav.Item>
+          <Header.Nav.Item to="/#ご挨拶">ご挨拶</Header.Nav.Item>
 
           <Header.Nav.Item to="/#研究者案内">研究者紹介</Header.Nav.Item>
 
@@ -45,9 +46,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         </Header.Nav>
 
         <Header.NavMobile>
-          <Header.NavMobile.Item to="/#研究内容の紹介">
-            研究概要
-          </Header.NavMobile.Item>
+          <Header.NavMobile.Item to="/#ご挨拶">ご挨拶</Header.NavMobile.Item>
 
           <Header.NavMobile.Item to="/#研究者案内">
             研究者紹介

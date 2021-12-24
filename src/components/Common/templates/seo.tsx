@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { SeoQuery } from '~graphql-types'
 
 type SEOProps = {
   title?: string
@@ -16,7 +17,7 @@ export const Seo = ({
   twitterDescription,
   type = 'website',
 }: SEOProps): JSX.Element => {
-  const { site } = useStaticQuery<GatsbyTypes.SeoQuery>(graphql`
+  const { site } = useStaticQuery<SeoQuery>(graphql`
     query Seo {
       site {
         siteMetadata {
@@ -36,7 +37,7 @@ export const Seo = ({
   `)
   return (
     <Helmet
-      defaultTitle={site?.siteMetadata?.title}
+      defaultTitle={site?.siteMetadata?.title ?? ''}
       titleTemplate={`%s | ${site?.siteMetadata?.title}`}
     >
       <title>{title}</title>

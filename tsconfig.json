@@ -10,7 +10,10 @@
     "baseUrl": "./",
     "paths": {
       "~/*": [
-        "src/*"
+        "src/*",
+      ],
+      "~graphql-types": [
+        "graphql-types.ts"
       ]
     },
     "esModuleInterop": true,

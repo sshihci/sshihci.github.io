@@ -17,6 +17,7 @@
   "tailwindCSS.classAttributes": [
     "className",
     "activeClassName",
-    "listClassName"
+    "listClassName",
+    "imgClassName"
   ]
 }

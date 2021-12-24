@@ -7,6 +7,7 @@ import {
 import { Layout } from '~/components/Common/templates/Layout'
 import { Seo } from '~/components/Common/templates/seo'
 import Section from '~/components/Section'
+import { NewsItemFragment, NewsPageQuery } from '~graphql-types'
 
 export const query = graphql`
   fragment NewsItem on File {
@@ -30,36 +31,16 @@ export const query = graphql`
   }
 `
 
-const keyExtractor = (item: GatsbyTypes.NewsItemFragment) => item.id
+const keyExtractor = (item: NewsItemFragment) => item.id
 
 const RenderItem: PaginationRenderItem<
-  GatsbyTypes.NewsItemFragment,
+  NewsItemFragment,
   Record<string, unknown>
 > = ({ item }) => {
   return <NewsListItem {...item} />
-  // return (
-  //   <GatsbyLink
-  //     className="flex flex-row items-end mb-4 border-b border-cyan-600 hover:bg-cyan-50"
-  //     to={`/news/${item.childMarkdownRemark?.frontmatter?.slug || item.name}`}
-  //   >
-  //     <div className="flex flex-col-reverse flex-shrink-0">
-  //       <p className="py-2 px-6 group-hover:text-gray-700">
-  //         {item.childMarkdownRemark?.frontmatter?.title}
-  //       </p>
-
-  //       <p className="font-light text-cyan-600 group-hover:text-cyan-700">
-  //         {item.childMarkdownRemark?.frontmatter?.date}
-  //       </p>
-  //     </div>
-
-  //     <p className="py-1 px-3 text-sm">{item.childMarkdownRemark?.excerpt}</p>
-  //   </GatsbyLink>
-  // )
 }
 
-const NewsPage = ({
-  data,
-}: PageProps<GatsbyTypes.NewsPageQuery>): JSX.Element => {
+const NewsPage = ({ data }: PageProps<NewsPageQuery>): JSX.Element => {
   return (
     <Layout>
       <Seo title="お知らせ一覧" />

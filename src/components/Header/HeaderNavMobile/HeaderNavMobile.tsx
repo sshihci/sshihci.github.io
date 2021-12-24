@@ -21,7 +21,7 @@ export const HeaderNavMobile = forwardRef<
     <nav className={clsx('block', 'lg:hidden', className)} ref={ref} {...props}>
       <div className={clsx(!isOpen ? 'block' : 'hidden')}>
         <button
-          className="flex flex-col items-center"
+          className="flex flex-col items-center min-w-[3rem]"
           onClick={setTrue}
           type="button"
         >

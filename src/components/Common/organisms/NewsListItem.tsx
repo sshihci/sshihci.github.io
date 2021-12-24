@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import GatsbyLink from 'gatsby-link'
+import { NewsListItemFragment as NewsListItemType } from '~graphql-types'
 
 export const NewsListItemFragment = graphql`
   fragment NewsListItem on File {
@@ -16,12 +17,10 @@ export const NewsListItemFragment = graphql`
   }
 `
 
-type NewsListItemProps = GatsbyTypes.NewsListItemFragment
-
 export const NewsListItem = ({
   name,
   childMarkdownRemark,
-}: NewsListItemProps): JSX.Element => {
+}: NewsListItemType): JSX.Element => {
   return (
     <GatsbyLink to={`/news/${childMarkdownRemark?.frontmatter?.slug ?? name}`}>
       <section className="flex flex-row items-end mb-4 border-b border-cyan-600 hover:bg-cyan-50">

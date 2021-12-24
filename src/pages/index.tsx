@@ -14,6 +14,7 @@ import Introduction from '~/components/Introduction'
 import NewsList from '~/components/NewsList'
 import ResearchList from '~/components/ResearchList'
 import Section from '~/components/Section'
+import { IndexPageQuery } from '~graphql-types'
 
 export const query = graphql`
   query IndexPage {
@@ -27,9 +28,20 @@ export const query = graphql`
         ...NewsListItem
       }
     }
-    hero: file(sourceInstanceName: { eq: "images" }, name: { eq: "hero" }) {
+    heroMobile: file(
+      sourceInstanceName: { eq: "images" }
+      name: { eq: "hero-mobile" }
+    ) {
       childImageSharp {
-        gatsbyImageData
+        gatsbyImageData(layout: FULL_WIDTH, quality: 80)
+      }
+    }
+    heroDesktop: file(
+      sourceInstanceName: { eq: "images" }
+      name: { eq: "hero-desktop" }
+    ) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH, quality: 80)
       }
     }
     topImage: file(
@@ -56,14 +68,19 @@ export const query = graphql`
   }
 `
 
-const IndexPage = ({
-  data,
-}: PageProps<GatsbyTypes.IndexPageQuery>): JSX.Element => {
-  const hero = useMemo(
+const IndexPage = ({ data }: PageProps<IndexPageQuery>): JSX.Element => {
+  const heroMobile = useMemo(
     () =>
-      data.hero?.childImageSharp?.gatsbyImageData &&
-      getImage(data.hero.childImageSharp.gatsbyImageData),
-    [data.hero?.childImageSharp?.gatsbyImageData],
+      data.heroMobile?.childImageSharp?.gatsbyImageData &&
+      getImage(data.heroMobile.childImageSharp.gatsbyImageData),
+    [data.heroMobile?.childImageSharp?.gatsbyImageData],
+  )
+
+  const heroDesktop = useMemo(
+    () =>
+      data.heroDesktop?.childImageSharp?.gatsbyImageData &&
+      getImage(data.heroDesktop.childImageSharp.gatsbyImageData),
+    [data.heroDesktop?.childImageSharp?.gatsbyImageData],
   )
 
   const topImage = useMemo(
@@ -78,59 +95,58 @@ const IndexPage = ({
       <Seo />
 
       <Hero className="mb-8">
-        {hero && <Hero.Image alt="" image={hero} />}
+        {heroMobile && (
+          <Hero.Image
+            alt=""
+            desktopImage={heroDesktop}
+            mobileImage={heroMobile}
+          />
+        )}
 
         <Hero.Text>
-          <span className="text-4xl leading-normal">
+          <span className="text-xl sm:text-2xl md:text-4xl leading-normal">
             Health Data Science Frontier.
           </span>
 
           <br />
 
-          <span className="text-5xl leading-normal">
+          <span className="text-3xl sm:text-4xl md:text-5xl leading-normal">
             データで医療を変えていく
           </span>
         </Hero.Text>
 
-        <Hero.Badge>
-          <Hero.Badge.Text>
-            Big Data <br /> Analysis
-          </Hero.Badge.Text>
-        </Hero.Badge>
-
         <HexagonMap className="absolute -bottom-8 left-8" />
       </Hero>
 
-      <Section id="研究内容の紹介">
-        <Section.Title>研究内容の紹介</Section.Title>
+      <Section id="ご挨拶">
+        <Section.Title>ご挨拶</Section.Title>
 
         <Section.Body>
           <ResearchList>
             <ResearchList.Item>
-              <ResearchList.Item.Title>
-                研究の目指すところ
-              </ResearchList.Item.Title>
+              <ResearchList.Item.Title>研究について</ResearchList.Item.Title>
 
               <ResearchList.Item.Body>
-                ここからサンプル文です。こちらは次第もしある詐欺人という事の上に聴いたで。
-                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
-                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
-                こちらは次第もしある詐欺人という事の上に聴いたで。
-                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
-                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+                私は情報系がバックグラウンドで、大学院から医歯学総合研究科に進み、
+                疫学や統計に関する勉強をしていました。以来、医療・福祉政策やヘルスサービスリサーチを研究テーマとしています。
+                研究は、量的な分析に加えて、諸外国の医療制度に関する研究や、
+                医療政策に関する質的研究も行っています。
+                ここ数年は、統計学に加えて機械学習など新たな手法へのチャレンジをしています。
+                その他の活動として、データの利活用に資するオープンサイエンスの推進、統計学の研究会などを行っています。
               </ResearchList.Item.Body>
             </ResearchList.Item>
 
             <ResearchList.Item>
-              <ResearchList.Item.Title>研究領域</ResearchList.Item.Title>
+              <ResearchList.Item.Title>学生の方へ</ResearchList.Item.Title>
 
               <ResearchList.Item.Body>
-                ここからサンプル文です。こちらは次第もしある詐欺人という事の上に聴いたで。
-                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
-                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
-                こちらは次第もしある詐欺人という事の上に聴いたで。
-                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
-                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+                HDSに入学される方は、既に何らかの分野のプロフェッショナルですので、
+                私はその方の修士課程やその先の目標に応じて、
+                異なった視点から研究を組み立てていくプロセスをアシストしていきたいと思っています。
+                HDSを卒業された後には、その領域のリーダーとして活躍する人になってほしいと思っていますし、
+                入学された方にはそのポテンシャルがあると実感しています。
+                ヘルスサービスリサーチの対象となる研究分野は限定されていないので、
+                多様な領域の方と議論できるといいなと思っています。
               </ResearchList.Item.Body>
             </ResearchList.Item>
           </ResearchList>
@@ -166,10 +182,12 @@ const IndexPage = ({
               </Introduction.MainSubject>
 
               <Introduction.Profile>
-                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
-                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
-                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
-                経歴やこれまでの業績など簡単に。箇条書きでも文章でも。挨拶などでも。
+                医療は、サイエンスが背景にありつつも、
+                現実世界では必ずしもゼロイチでわけられない曖昧な領域を含んでおり、
+                その国特有のものの考え方が反映されている非常に面白い分野だと感じています。
+                医療業界も、近い未来には他の分野の企業や人が参入する新たな時代が来るのではないでしょうか。
+                医療のあり方を記述し、世の中を俯瞰して見るような研究も好きですが、
+                そういった時代の変化を捉える分析も行っていきたいと考えています。
               </Introduction.Profile>
 
               <Link className="ml-auto" to="https://researchmap.jp/ssyr">

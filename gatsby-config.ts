@@ -65,17 +65,29 @@ const config: GatsbyConfig = {
       },
       resolve: `gatsby-source-filesystem`,
     },
+    // {
+    //   options: {
+    //     emitPluginDocuments: {
+    //       [`${__dirname}/src/__generated__/gatsby-plugin-documents.graphql`]:
+    //         true,
+    //     },
+    //     emitSchema: {
+    //       [`${__dirname}/src/__generated__/gatsby-introspection.json`]: true,
+    //     },
+    //     scalars: {
+    //       Hoge: 'string',
+    //       JSON: 'any',
+    //     },
+    //   },
+    //   resolve: `gatsby-plugin-typegen`,
+    // },
     {
       options: {
-        emitPluginDocuments: {
-          [`${__dirname}/src/__generated__/gatsby-plugin-documents.graphql`]:
-            true,
-        },
-        emitSchema: {
-          [`${__dirname}/src/__generated__/gatsby-introspection.json`]: true,
+        codegenConfig: {
+          maybeValue: 'T | undefined',
         },
       },
-      resolve: `gatsby-plugin-typegen`,
+      resolve: `gatsby-plugin-graphql-codegen`,
     },
     {
       options: {

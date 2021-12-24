@@ -1,19 +1,39 @@
 import clsx from 'clsx'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { ComponentProps } from 'react'
+
+type HeroImageProps = Omit<ComponentProps<typeof GatsbyImage>, 'image'> & {
+  mobileImage: IGatsbyImageData
+  desktopImage: IGatsbyImageData
+}
 
 export const HeroImage = ({
   className,
+  mobileImage,
+  desktopImage,
   ...props
-}: ComponentProps<typeof GatsbyImage>): JSX.Element => {
+}: HeroImageProps): JSX.Element => {
   return (
     <div className="overflow-hidden relative">
       <GatsbyImage
-        className={clsx('object-cover w-full h-[32rem]', className)}
+        className={clsx(
+          'hidden md:block object-cover w-full h-[32rem]',
+          className,
+        )}
+        image={desktopImage}
+        imgClassName="object-right-top"
         {...props}
       />
 
-      <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-60" />
+      <GatsbyImage
+        className={clsx(
+          'block md:hidden object-cover w-full h-[32rem]',
+          className,
+        )}
+        image={mobileImage}
+        imgClassName="object-right-top"
+        {...props}
+      />
     </div>
   )
 }

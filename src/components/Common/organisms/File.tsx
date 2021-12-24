@@ -7,6 +7,7 @@ import {
   AiOutlineFileExcel,
   AiOutlineFilePdf,
 } from 'react-icons/ai'
+import { FileQuery } from '~graphql-types'
 
 type FileProps = {
   name: string
@@ -19,7 +20,7 @@ const fileIcon: Record<string, IconType> = {
 }
 
 export const File = ({ name }: FileProps): JSX.Element => {
-  const { allFile } = useStaticQuery<GatsbyTypes.FileQuery>(graphql`
+  const { allFile } = useStaticQuery<FileQuery>(graphql`
     query File {
       allFile(filter: { sourceInstanceName: { eq: "data" } }) {
         nodes {

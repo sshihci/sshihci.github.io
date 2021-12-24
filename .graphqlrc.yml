@@ -1,5 +1,4 @@
 schema:
-  - ./src/__generated__/gatsby-introspection.json
+  - http://localhost:8000/__graphql
 documents:
   - ./src/**/*.{ts,tsx}
-  - ./src/__generated__/gatsby-plugin-documents.graphql

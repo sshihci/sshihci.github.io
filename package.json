@@ -40,6 +40,7 @@
     "eslint-plugin-team-vals": "^1.0.47",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-brotli": "^2.1.0",
+    "gatsby-plugin-graphql-codegen": "^3.1.0",
     "gatsby-plugin-image": "^2.4.0",
     "gatsby-plugin-manifest": "^4.4.0",
     "gatsby-plugin-offline": "^5.4.0",

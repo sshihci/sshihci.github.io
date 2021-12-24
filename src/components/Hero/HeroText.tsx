@@ -8,8 +8,9 @@ export const HeroText = forwardRef<
   return (
     <p
       className={clsx(
-        'absolute bottom-12 left-12 font-light tracking-widest',
-        'md:bottom-36 md:left-36 md:text-4xl',
+        'absolute bottom-24 left-12 font-light tracking-widest',
+        'md:bottom-36 md:left-20 md:text-4xl',
+        'lg:left-36',
         className,
       )}
       ref={ref}

@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import { Layout } from '~/components/Common/templates/Layout'
 import { Seo } from '~/components/Common/templates/seo'
 import Section from '~/components/Section'
+import { NewsDetailPageQuery } from '~graphql-types'
 
 export const query = graphql`
   fragment NewsDetail on MarkdownRemark {
@@ -33,9 +34,7 @@ export const query = graphql`
   }
 `
 
-const NewsDetail = ({
-  data,
-}: PageProps<GatsbyTypes.NewsDetailPageQuery>): JSX.Element => {
+const NewsDetail = ({ data }: PageProps<NewsDetailPageQuery>): JSX.Element => {
   const file = useMemo(() => {
     return data.bySlug || data.byName
   }, [data.byName, data.bySlug])
