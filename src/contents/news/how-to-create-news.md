@@ -1,5 +1,5 @@
 ---
-title: お知らせのサンプル 兼 書き方
+title: お知らせの書き方 兼 サンプル
 date: 2021年12月24日
 attachment:
   - sample.pdf
@@ -8,12 +8,47 @@ slug: how-to-create-news
 noIndex: true
 ---
 
+### 目次
+
 ```toc
 exclude:
   - (大|中|小|より小さい|さらに小さい|一番小さい)見出し
 ```
 
-このファイルは、 [`src/contents/news/sample.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/sample.md) に対応しています。
+このファイルは、 [`src/contents/news/how-to-create-news.md`](https://github.com/sshihci/sshihci.github.io/blob/develop/src/contents/news/how-to-create-news.md) に対応しています。
+
+### 関連リンク
+
+- [お知らせの更新方法](../how-to-update-news)
+- [お知らせの削除方法](../how-to-delete-news)
+- [ファイルのアップロード方法](../how-to-upload-file)
+- [ファイルの更新方法](../how-to-update-file)
+- [ファイルの削除方法](../how-to-delete-file)
+- [サイトの更新状態の確認方法](../how-to-check-deploy)
+
+### お知らせについて
+
+お知らせは、 [`src/contents/news`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news) に `.md` で終わるファイルを作成することで、お知らせを作成することができます。
+
+お知らせは後述の `markdown` という記法を使って作成することができます。
+
+### 新しくお知らせを作成する方法
+
+1.  https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news へアクセスする
+2.  「Add file」をクリックし、「`Create new file`」をクリックする
+3.  `.md` で終わるような適当なファイル名を入力する（表示したい URL や、作成日にすると管理しやすいと思います）
+4.  内容を入力する
+
+    - [このファイルの原本](https://raw.githubusercontent.com/sshihci/sshihci.github.io/develop/src/contents/news/how-to-create-news.md) を開いて、コピーしてから編集すると楽かもしれません。
+
+5.  必要であれば入力欄の上部にある「`Preview`」ボタンを押して簡易的なプレビューを表示することができます。
+6.  ページ下部の緑色の「`Commit new file`」ボタンをクリックする
+
+    - その際に、ボタン上部に 2 つの入力欄とラジオボタンが表示されますが、基本的にそのままで問題ありません
+    - 入力欄はどちらも空で問題ありません。
+    - ラジオボタンは、「`Commit directly to the develop branch.`」を選択してください
+
+これで更新は終了です。5~10 分ほどすると更新が反映されます。
 
 ### メタ情報について
 

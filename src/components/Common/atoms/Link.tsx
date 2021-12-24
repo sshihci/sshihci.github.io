@@ -1,7 +1,6 @@
-import { useLocation } from '@reach/router'
 import clsx from 'clsx'
 import { GatsbyLinkProps, Link as GatsbyLink } from 'gatsby'
-import { useMemo } from 'react'
+import { useIsSameSite } from '~/hooks/useIsSameSite'
 import { LinkStyle } from './LinkStyle'
 
 export const Link = ({
@@ -9,17 +8,7 @@ export const Link = ({
   to,
   ...props
 }: Omit<GatsbyLinkProps<Record<string, unknown>>, 'ref'>): JSX.Element => {
-  const location = useLocation()
-  const isSameSite = useMemo(() => {
-    if (to.startsWith('/')) return true
-    try {
-      const toUrl = new URL(to)
-      const locationUrl = new URL(location.href)
-      return toUrl.origin === locationUrl.origin
-    } catch {
-      return false
-    }
-  }, [location.href, to])
+  const isSameSite = useIsSameSite(to)
 
   if (isSameSite) {
     return (
