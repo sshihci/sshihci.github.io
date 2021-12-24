@@ -22,6 +22,7 @@ noIndex: true
 - [ファイルの更新方法](../how-to-upload-file)
 - [ファイルの削除方法](../how-to-delete-file)
 - [サイトの更新状態の確認方法](../how-to-check-deploy)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
 
 ### お問い合わせフォームと Google フォームの連携方法
 

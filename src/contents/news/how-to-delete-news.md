@@ -22,8 +22,11 @@ noIndex: true
 - [ファイルの削除方法](../how-to-delete-file)
 - [サイトの更新状態の確認方法](../how-to-check-deploy)
 - [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
 
 ### お知らせの削除方法
+
+※ 削除したいお知らせに秘密情報が含まれる場合は [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history) も合わせてご確認ください
 
 1. [`news`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news) フォルダーから削除したいお知らせを選択しクリックします。
 2. ファイルの内容が表示されている部分の上部にある `ゴミ箱` ボタンをクリックします。

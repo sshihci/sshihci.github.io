@@ -22,8 +22,11 @@ noIndex: true
 - [ファイルの削除方法](../how-to-delete-file)
 - [サイトの更新状態の確認方法](../how-to-check-deploy)
 - [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
 
 ### ファイルの更新方法
+
+※ 更新したいファイルに秘密情報が含まれる場合は [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history) も合わせてご確認ください
 
 ファイルは直接更新することができず、一度削除し、再度同じ名前のファイルとしてアップロードする必要があります。
 

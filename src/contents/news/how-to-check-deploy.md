@@ -20,6 +20,7 @@ noIndex: true
 - [ファイルの更新方法](../how-to-update-file)
 - [ファイルの削除方法](../how-to-delete-file)
 - [お問い合わせフォームの設定方法](../how-to-connect-contact-form)
+- [秘密情報をアップロードしてしまったら](../how-to-remove-from-git-history)
 
 ### サイトの更新状態の確認方法
 

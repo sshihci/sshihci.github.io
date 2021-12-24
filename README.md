@@ -4,7 +4,7 @@
 
 https://sshihci.github.io/
 
-### 関連リンク
+### ドキュメント
 
 - お知らせの書き方 https://sshihci.github.io/news/how-to-create-news
 - お知らせの更新方法 https://sshihci.github.io/news/how-to-update-news
@@ -15,3 +15,4 @@ https://sshihci.github.io/
 - サイトの更新状態の確認方法 https://sshihci.github.io/news/how-to-check-deploy
 - お問い合わせフォームの設定方法 https://sshihci.github.io/news/how-to-connect-contact-form
 - 開発方法 https://sshihci.github.io/news/how-to-development
+- 秘密情報をアップロードしてしまったら https://sshihci.github.io/news/how-to-remove-from-git-history
