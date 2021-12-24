@@ -12,6 +12,7 @@ import { ContactFormButton } from '~/components/ContactForm/ContactFormButton'
 import Hero from '~/components/Hero'
 import Introduction from '~/components/Introduction'
 import NewsList from '~/components/NewsList'
+import ResearchList from '~/components/ResearchList'
 import Section from '~/components/Section'
 
 export const query = graphql`
@@ -104,7 +105,35 @@ const IndexPage = ({
         <Section.Title>研究内容の紹介</Section.Title>
 
         <Section.Body>
-          <p>研究の目的は〜〜〜</p>
+          <ResearchList>
+            <ResearchList.Item>
+              <ResearchList.Item.Title>
+                研究の目指すところ
+              </ResearchList.Item.Title>
+
+              <ResearchList.Item.Body>
+                ここからサンプル文です。こちらは次第もしある詐欺人という事の上に聴いたで。
+                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
+                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+                こちらは次第もしある詐欺人という事の上に聴いたで。
+                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
+                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+              </ResearchList.Item.Body>
+            </ResearchList.Item>
+
+            <ResearchList.Item>
+              <ResearchList.Item.Title>研究領域</ResearchList.Item.Title>
+
+              <ResearchList.Item.Body>
+                ここからサンプル文です。こちらは次第もしある詐欺人という事の上に聴いたで。
+                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
+                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+                こちらは次第もしある詐欺人という事の上に聴いたで。
+                どうもほかを指図者も無論その永続あるだなどの好かともらっんへは下宿得あるたと、
+                そうには上るですでただろ。道具をしませのはああ一遍が何だかますですた。
+              </ResearchList.Item.Body>
+            </ResearchList.Item>
+          </ResearchList>
         </Section.Body>
       </Section>
 
