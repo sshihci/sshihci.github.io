@@ -74,7 +74,7 @@ const NewsDetail = ({ data }: PageProps<NewsDetailPageQuery>): JSX.Element => {
             </GatsbyLink>
           </div>
 
-          <article className="prose-img:object-contain mx-auto prose-img:mx-auto max-w-3xl prose-h1:font-bold prose">
+          <article className="prose-img:object-contain mx-auto prose-img:mx-auto max-w-3xl prose-h1:font-bold break-all prose">
             <h1>{file.childMarkdownRemark?.frontmatter?.title}</h1>
 
             <p className="">{file.childMarkdownRemark?.frontmatter?.date}</p>
