@@ -4,13 +4,13 @@ import { resolve } from 'path'
 const siteMetadata = {
   contact: {
     fields: {
-      belongs: 'entry.1239432921',
-      body: 'entry.911358195',
-      contactAddress: 'entry.527437244',
-      name: 'entry.814214239',
+      belongs: 'entry.1233574601',
+      body: 'entry.1697686716',
+      contactAddress: 'entry.2084412549',
+      name: 'entry.1026815018',
     },
     googleFormUrl:
-      'https://docs.google.com/forms/d/e/1FAIpQLSdIlc0UtgbxsrB7KaGIP21jTFWAjPPpPsxL1tT-e_AAg7e6Mw/viewform',
+      'https://docs.google.com/forms/d/e/1FAIpQLScGI_Dm7IJ6iG3F5imaR2XxjKiIajCoLqgcLmB93Zu6iYOvSw/viewform',
   },
   description: `横浜市立大学 データサイエンス研究科 ヘルスデータサイエンス専攻 の 清水沙友里です。`,
   facebook: {
