@@ -13,7 +13,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "check-type": "tsc --noEmit",
-    "check-format": "prettier -c src \"gatsby-*\" \".github/**/*.yml\"",
+    "check-format": "prettier -c \"src/**/*.ts\" \"gatsby-*\" \".github/**/*.yml\"",
     "check-lint": "eslint src \"gatsby-*\" --ext ts,tsx,js"
   },
   "dependencies": {
