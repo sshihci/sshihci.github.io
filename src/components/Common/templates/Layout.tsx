@@ -38,7 +38,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
 
           <Header.Nav.Item to="/#研究者案内">研究者紹介</Header.Nav.Item>
 
-          <Header.Nav.Item to="/#データの更新">データについて</Header.Nav.Item>
+          <Header.Nav.Item to="/#資料">資料</Header.Nav.Item>
 
           <Header.Nav.Item to="/#お知らせ">お知らせ</Header.Nav.Item>
 
@@ -52,9 +52,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
             研究者紹介
           </Header.NavMobile.Item>
 
-          <Header.NavMobile.Item to="/#データの更新">
-            データについて
-          </Header.NavMobile.Item>
+          <Header.NavMobile.Item to="/#資料">資料</Header.NavMobile.Item>
 
           <Header.NavMobile.Item to="/#お知らせ">
             お知らせ

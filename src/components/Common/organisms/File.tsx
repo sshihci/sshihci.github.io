@@ -17,10 +17,11 @@ const fileIcon: Record<string, IconType> = {
 
 export type FileProps = {
   name: string
+  display?: string
   className?: string
 }
 
-export const File = ({ name, className }: FileProps): JSX.Element => {
+export const File = ({ name, className, display }: FileProps): JSX.Element => {
   const { allFile } = useStaticQuery<FileQuery>(graphql`
     query File {
       allFile(filter: { sourceInstanceName: { eq: "data" } }) {
@@ -30,6 +31,7 @@ export const File = ({ name, className }: FileProps): JSX.Element => {
           name
           base
           publicURL
+          relativePath
         }
       }
     }
@@ -37,7 +39,8 @@ export const File = ({ name, className }: FileProps): JSX.Element => {
 
   const file = useMemo(() => {
     return allFile.nodes.find(
-      (node) => node.name === name || node.base === name,
+      (node) =>
+        node.relativePath === name || node.name === name || node.base === name,
     )
   }, [allFile.nodes, name])
 
@@ -54,20 +57,26 @@ export const File = ({ name, className }: FileProps): JSX.Element => {
     <div>
       <a
         className={clsx(
-          'flex flex-row flex-nowrap gap-2 items-center py-2 px-4 rounded-md border',
-          file.extension === 'pdf'
-            ? 'text-white bg-rose-500 border-rose-500'
-            : file.extension === 'xlsx' || file.extension === 'xlx'
-            ? 'text-white bg-emerald-500 border-emerald-500'
-            : 'bg-white border-gray-600',
+          'flex flex-row flex-nowrap gap-2 items-center py-2 px-4',
+          'hover:underline hover:underline-offset-2',
           className,
         )}
         download
         href={file.publicURL}
       >
-        <Icon className="flex-shrink-0" size={48} />
+        <Icon
+          className={clsx(
+            'flex-shrink-0',
+            file.extension === 'pdf'
+              ? 'text-rose-500 border-rose-500'
+              : file.extension === 'xlsx' || file.extension === 'xlx'
+              ? 'text-emerald-500 border-emerald-500'
+              : 'border-gray-600',
+          )}
+          size={24}
+        />
 
-        <span className="text-lg">{file.base}</span>
+        <span className="text-lg">{display ?? file.base}</span>
       </a>
     </div>
   )

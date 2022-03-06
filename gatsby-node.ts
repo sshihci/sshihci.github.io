@@ -66,6 +66,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
         childMarkdownRemark: { frontmatter: { slug: string } }
       }[]
     }
+    allConfigYaml: { nodes: { year: number }[] }
   }>(/* GraphQL */ `
     query CreatePages {
       allNews: allFile(
@@ -82,6 +83,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
               slug
             }
           }
+        }
+      }
+      allConfigYaml {
+        nodes {
+          year
         }
       }
     }
@@ -110,4 +116,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
       })
     },
   )
+
+  result.data?.allConfigYaml.nodes.forEach(({ year }) => {
+    actions.createPage({
+      component: resolve('./src/templates/Data.tsx'),
+      context: {
+        year,
+      },
+      path: `/data/${year}`,
+    })
+  })
 }

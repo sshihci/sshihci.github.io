@@ -19,20 +19,20 @@ exclude:
 
 ### お知らせについて
 
-お知らせは、 [`src/contents/news`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news) に `.md` で終わるファイルを作成することで、お知らせを作成することができます。
+お知らせは、 [`src/contents/news`](https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news) に `.md` で終わるファイルを作成することで、お知らせを作成できます。
 
-お知らせは後述の `markdown` という記法を使って作成することができます。
+お知らせは後述の `markdown` という記法を使って作成できます。
 
 ### 新しくお知らせを作成する方法
 
 1.  https://github.com/sshihci/sshihci.github.io/tree/develop/src/contents/news へアクセスする
 2.  「Add file」をクリックし、「`Create new file`」をクリックする
-3.  `.md` で終わるような適当なファイル名を入力する（表示したい URL や、作成日にすると管理しやすいと思います）
+3.  `.md` で終わるような適当なファイル名を入力する（表示したい URL や、作成日にすると管理しやすいかと思います）
 4.  内容を入力する
 
     - [このファイルの原本](https://raw.githubusercontent.com/sshihci/sshihci.github.io/develop/src/contents/news/how-to-create-news.md) を開いて、コピーしてから編集すると楽かもしれません。
 
-5.  必要であれば入力欄の上部にある「`Preview`」ボタンを押して簡易的なプレビューを表示することができます。
+5.  必要であれば入力欄の上部にある「`Preview`」ボタンを押して簡易的なプレビューを表示できます。
 6.  ページ下部の緑色の「`Commit new file`」ボタンをクリックする
 
     - その際に、ボタン上部に 2 つの入力欄とラジオボタンが表示されますが、基本的にそのままで問題ありません
@@ -171,7 +171,7 @@ https://qiita.com/kamorits/items/6f342da395ad57468ae3 を参考にしてもら�
 
 #### 目次
 
-目次を挿入することもできます。ただし、一つのファイルにつき一つの目次を挿入することができます。
+目次を挿入することもできます。ただし、1 つのファイルにつき 1 つの目次を挿入できます。
 
 ````markdown
 ```toc

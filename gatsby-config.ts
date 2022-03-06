@@ -66,6 +66,7 @@ const config: GatsbyConfig = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
     {
       options: {
         ignore: [`${__dirname}/src/__generated__/*.ts`],

@@ -1,4 +1,4 @@
-import { graphql as graphql, PageProps } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { NewsListItem } from '~/components/Common/organisms/NewsListItem'
 import {
   Pagination,
@@ -54,15 +54,19 @@ const NewsPage = ({ data }: PageProps<NewsPageQuery>): JSX.Element => {
         <Section.Title>お知らせ一覧</Section.Title>
 
         <Section.Body>
-          <Pagination
-            className="mx-auto max-w-4xl"
-            commonProps={{}}
-            items={data.allFile.nodes}
-            keyExtractor={keyExtractor}
-            listClassName="mb-4"
-            perPage={data.site?.siteMetadata?.newsPerPage ?? 5}
-            renderItem={RenderItem}
-          />
+          {data.allFile.nodes.length > 0 ? (
+            <Pagination
+              className="mx-auto max-w-4xl"
+              commonProps={{}}
+              items={data.allFile.nodes}
+              keyExtractor={keyExtractor}
+              listClassName="mb-4"
+              perPage={data.site?.siteMetadata?.newsPerPage ?? 5}
+              renderItem={RenderItem}
+            />
+          ) : (
+            <p>お知らせはまだありません</p>
+          )}
         </Section.Body>
       </Section>
     </Layout>

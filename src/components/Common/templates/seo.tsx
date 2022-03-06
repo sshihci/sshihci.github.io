@@ -9,6 +9,7 @@ type SEOProps = {
   twitterDescription?: string | undefined
   type?: 'website' | 'article'
   robots?: 'noindex' | undefined
+  canonical?: string | undefined
 }
 
 export const Seo = ({
@@ -17,6 +18,7 @@ export const Seo = ({
   twitterTitle,
   twitterDescription,
   type = 'website',
+  canonical,
   robots,
 }: SEOProps): JSX.Element => {
   const { site } = useStaticQuery<SeoQuery>(graphql`
@@ -43,6 +45,8 @@ export const Seo = ({
       titleTemplate={`%s | ${site?.siteMetadata?.title}`}
     >
       <title>{title}</title>
+
+      {canonical && <link href={canonical} rel="canonical" />}
 
       <meta
         content={description ?? site?.siteMetadata?.description}

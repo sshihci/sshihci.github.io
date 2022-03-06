@@ -1,0 +1,74 @@
+- year: 2019
+  files:
+    - name: 全国保険医療機関（病院・診療所）一覧（平成30年度版）
+      date: 2019/10/23
+      pdf: ./hosp_pha/2018/HOSP2018.pdf
+      excel: ./hosp_pha/2018/HOSP2018.xlsx
+    - name: 郵便番号・二次医療圏対応表（平成30年度版）
+      date: 2019/10/21
+      pdf: ./post/2018/POST2018.pdf
+      excel: ./post/2018/POST2018.xlsx
+
+- year: 2018
+  files:
+    - name: 郵便番号・二次医療圏対応表（平成29年度版）
+      date: 2018/06/29
+      pdf: ./post/2017/POST2017.pdf
+      excel: ./post/2017/POST2017.xlsx
+    - name: 全国保険薬局一覧（平成29年度版）
+      date: 2018/06/29
+      pdf: ./hosp_pha/2017/HOSP_PHA2017.pdf
+      excel: ./hosp_pha/2017/PHA2017.xlsx
+    - name: 全国保険医療機関（病院・診療所）一覧（平成29年度版）
+      date: 2018/06/29
+      pdf: ./hosp_pha/2017/HOSP_PHA2017.pdf
+      excel: ./hosp_pha/2017/HOSP2017.xlsx
+
+- year: 2017
+  files:
+    - name: 平成27年度 病床機能報告データ(全国版)
+      date: 2017/09/15
+      pdf: ./sickbed_functions/2017/Sickbedfunction2017.pdf
+      excel: ./sickbed_functions/2017/Sickbedfunction2017_data.xlsx
+    - name: 全国保険医療機関（病院・診療所）一覧（平成28年度版）
+      date: 2017/07/06
+      pdf: ./hosp_pha/2016/HOSPPHA2016.pdf
+      excel: ./hosp_pha/2016/HOSP2016.xlsx
+    - name: 全国保険薬局一覧（平成28年度版）
+      date: 2017/06/30
+      pdf: ./hosp_pha/2016/HOSPPHA2016.pdf
+      excel: ./hosp_pha/2016/PHA2016.xlsx
+    - name: 郵便番号・二次医療圏対応表（平成28年度版）
+      date: 2017/06/30
+      pdf: ./post/2016/POST2016.pdf
+      excel: ./post/2016/POST2016.xlsx
+
+- year: 2016
+  files:
+    - name: 郵便番号・二次医療圏対応表（平成27年度版）
+      date: 2016/05/31
+      pdf: ./post/2015/POST2015.pdf
+      excel: ./post/2015/POST2015.xlsx
+    - name: 全国保険薬局一覧（平成27年度版）
+      date: 2016/05/31
+      pdf: ./hosp_pha/2015/HOSPPHA2015.pdf
+      excel: ./hosp_pha/2015//PHA2015.xlsx
+    - name: 全国保険医療機関（病院・診療所）一覧（平成27年度版）
+      date: 2016/05/31
+      pdf: ./hosp_pha/2015/HOSPPHA2015.pdf
+      excel: ./hosp_pha/2015/HOSP2015.xlsx
+
+- year: 2015
+  files:
+    - name: 全国保険医療機関（病院・診療所）一覧
+      date: 2015/05/11
+      pdf: ./hosp_pha/2014/HOSPPHA2014.pdf
+      excel: ./hosp_pha/2014/HOSP2014.xlsx
+    - name: 全国保険薬局一覧
+      date: 2015/05/11
+      pdf: ./hosp_pha/2014/HOSPPHA2014.pdf
+      excel: ./hosp_pha/2014/PHA2014.xlsx
+    - name: 郵便番号・二次医療圏対応表（平成26年度版）
+      date: 2015/05/11
+      pdf: ./post/2014/POST2014.pdf
+      excel: ./post/2014/POST2014.xlsx

@@ -1,26 +1,32 @@
-import { graphql as graphql, PageProps } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { getImage, StaticImage } from 'gatsby-plugin-image'
 import { useMemo } from 'react'
 import { Link } from '~/components/Common/atoms/Link'
 import { HexagonMap } from '~/components/Common/molecules/HexagonMap'
-import { File } from '~/components/Common/organisms/File'
 import { NewsListItem } from '~/components/Common/organisms/NewsListItem'
 import { Layout } from '~/components/Common/templates/Layout'
 import { Seo } from '~/components/Common/templates/seo'
 import ContactForm from '~/components/ContactForm'
 import { ContactFormButton } from '~/components/ContactForm/ContactFormButton'
+import { DataSectionBlock } from '~/components/DataSection/DataSectionBlock'
 import Hero from '~/components/Hero'
 import Introduction from '~/components/Introduction'
 import NewsList from '~/components/NewsList'
 import ResearchList from '~/components/ResearchList'
 import Section from '~/components/Section'
+import { isNotNullable } from '~/lib/is-not-nullable'
 import { IndexPageQuery } from '~graphql-types'
 
 export const query = graphql`
   query IndexPage {
     allFile(
       limit: 3
-      filter: { sourceInstanceName: { eq: "news" }, name: { ne: "sample" } }
+      filter: {
+        sourceInstanceName: { eq: "news" }
+        name: { ne: "sample" }
+        extension: { eq: "md" }
+        childMarkdownRemark: { frontmatter: { noIndex: { ne: true } } }
+      }
       sort: { fields: childrenMarkdownRemark___frontmatter___date, order: DESC }
     ) {
       nodes {
@@ -50,6 +56,19 @@ export const query = graphql`
     ) {
       childImageSharp {
         gatsbyImageData
+      }
+    }
+    latestFiles: configYaml {
+      year
+      files {
+        name
+        date
+        pdf {
+          relativePath
+        }
+        excel {
+          relativePath
+        }
       }
     }
     site {
@@ -208,11 +227,15 @@ const IndexPage = ({ data }: PageProps<IndexPageQuery>): JSX.Element => {
         <Section.Title>お知らせ</Section.Title>
 
         <Section.Body>
-          <NewsList className="mb-8">
-            {data.allFile.nodes.map((news) => (
-              <NewsListItem key={news.id} {...news} />
-            ))}
-          </NewsList>
+          {data.allFile.nodes.length > 0 ? (
+            <NewsList className="mb-8">
+              {data.allFile.nodes.map((news) => (
+                <NewsListItem key={news.id} {...news} />
+              ))}
+            </NewsList>
+          ) : (
+            <p>お知らせはまだありません</p>
+          )}
 
           <Link className="block ml-auto max-w-max" to="/news">
             お知らせ一覧
@@ -220,20 +243,22 @@ const IndexPage = ({ data }: PageProps<IndexPageQuery>): JSX.Element => {
         </Section.Body>
       </Section>
 
-      <Section id="データの更新">
-        <Section.Title>データの更新</Section.Title>
+      <Section id="資料">
+        <Section.Title>{`${data.latestFiles?.year}年度の資料`}</Section.Title>
 
         <Section.Body>
-          <div className="flex flex-col gap-1 max-w-md">
-            <File name="POST.pdf" />
+          <div className="flex-1">
+            <div className="flex flex-col gap-8 mb-4 max-w-lg">
+              {data.latestFiles?.files?.filter(isNotNullable).map((file) => (
+                <DataSectionBlock file={file} key={file.name} />
+              ))}
+            </div>
+          </div>
 
-            <File name="郵便番号二次医療圏対応表2017.xlsx" />
-
-            <File name="PHA2017_6月版.xlsx" />
-
-            <File name="HOSPPHA.pdf" />
-
-            <File name="HOSP2017_7月版.xlsx" />
+          <div className="mx-auto max-w-max">
+            <Link className="block" to="/data">
+              過去の資料はこちら
+            </Link>
           </div>
         </Section.Body>
       </Section>
