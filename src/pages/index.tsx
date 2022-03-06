@@ -7,7 +7,6 @@ import { NewsListItem } from '~/components/Common/organisms/NewsListItem'
 import { Layout } from '~/components/Common/templates/Layout'
 import { Seo } from '~/components/Common/templates/seo'
 import ContactForm from '~/components/ContactForm'
-import { ContactFormButton } from '~/components/ContactForm/ContactFormButton'
 import { DataSectionBlock } from '~/components/DataSection/DataSectionBlock'
 import Hero from '~/components/Hero'
 import Introduction from '~/components/Introduction'
@@ -321,9 +320,9 @@ const IndexPage = ({ data }: PageProps<IndexPageQuery>): JSX.Element => {
               </div>
             </div>
 
-            <ContactFormButton className="block mx-auto">
+            <ContactForm.Button className="block mx-auto">
               送信する
-            </ContactFormButton>
+            </ContactForm.Button>
           </ContactForm>
         </Section.Body>
       </Section>
