@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-news-detail-tsx",
+    "path": "/news/news20220407",
+    "result": {"data":{"bySlug":{"id":"3a054657-3b0e-573c-b6c1-1d1d466c19c0","childMarkdownRemark":{"htmlAst":{"type":"root","children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"全国保険医療機関（病院・診療所）一覧、郵便番号・二次医療圏対応表（令和3年度版）を公開しました"}]}],"data":{"quirksMode":false}},"excerpt":"全国保険医療機関（病院・診療所）一覧、郵便番号・二次医療圏対応表（令和3年度版）を公開しました","frontmatter":{"title":"ニュース20220407","attachment":[null],"date":"2022年04月07日","noIndex":true}}},"byName":{"id":"3a054657-3b0e-573c-b6c1-1d1d466c19c0","childMarkdownRemark":{"htmlAst":{"type":"root","children":[{"type":"element","tagName":"p","properties":{},"children":[{"type":"text","value":"全国保険医療機関（病院・診療所）一覧、郵便番号・二次医療圏対応表（令和3年度版）を公開しました"}]}],"data":{"quirksMode":false}},"excerpt":"全国保険医療機関（病院・診療所）一覧、郵便番号・二次医療圏対応表（令和3年度版）を公開しました","frontmatter":{"title":"ニュース20220407","attachment":[null],"date":"2022年04月07日","noIndex":true}}}},"pageContext":{"name":"20220407","slug":"news20220407"}},
+    "staticQueryHashes": ["1742117477","2505511569","2515209461"]}
