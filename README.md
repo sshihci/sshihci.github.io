@@ -17,3 +17,4 @@ https://sshihci.github.io/
 - データのアップロード方法 https://sshihci.github.io/news/how-to-upload-data
 - 開発方法 https://sshihci.github.io/news/how-to-development
 - 秘密情報をアップロードしてしまったら https://sshihci.github.io/news/how-to-remove-from-git-history
+
