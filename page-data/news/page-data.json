@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-news-tsx",
     "path": "/news/",
-    "result": {"data":{"allFile":{"nodes":[]},"site":{"siteMetadata":{"newsPerPage":5}}},"pageContext":{}},
+    "result": {"data":{"allFile":{"nodes":[{"id":"285e4de3-5ff7-5944-915d-cf92de0dc417","name":"2022-04-07-news","childMarkdownRemark":{"frontmatter":{"date":"2022年04月07日","title":"ニュース20220407","slug":"2022-04-07-news"},"excerpt":"全国保険医療機関（病院・診療所）一覧（令和3年度版）、郵便番号・二次医療圏対応表（令和…"}}]},"site":{"siteMetadata":{"newsPerPage":5}}},"pageContext":{}},
     "staticQueryHashes": ["1742117477","2515209461"]}
